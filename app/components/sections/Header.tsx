@@ -13,12 +13,17 @@ import { profileData } from "../../data/profile";
 import { Globe, Linkedin, Github, Users, UserPlus, LocateFixed } from 'lucide-react';
 
 
+import { ThemeToggle } from "../theme-toggle";
+
 export const Header = () => {
   const initials = profileData.name.split(' ').map(n => n[0]).join('');
 
   return (
     <Card className="rounded-3xl shadow-2xl overflow-hidden">
-      <CardHeader className="flex flex-col md:flex-row items-center gap-8 p-8 md:p-12 bg-card/50">
+      <CardHeader className="relative flex flex-col md:flex-row items-center gap-8 p-8 md:p-12 bg-card/50">
+        <div className="absolute top-4 right-4">
+          <ThemeToggle />
+        </div>
         <Avatar className="w-40 h-40">
           <AvatarImage src="/profile-image.jpg" alt={profileData.name} />
           <AvatarFallback className="text-5xl font-bold">

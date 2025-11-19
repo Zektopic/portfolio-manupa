@@ -17,17 +17,25 @@ export const metadata: Metadata = {
   description: "Cloud Infrastructure Engineer | Electronics and Embedded Systems Enthusiast - Portfolio showcasing experience in DevOps, Cloud Computing, and Electronics Engineering",
 };
 
+import { ThemeProvider } from "./components/theme-provider";
+
 export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        {children}
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+        >
+          {children}
+        </ThemeProvider>
       </body>
     </html>
   );

@@ -20,5 +20,10 @@ export const profileData = {
   services: [
     "Cloud Application Development",
     "Engineering Design"
-  ]
+  ],
+  socials: {
+    linkedin: "https://linkedin.com/in/manupa-wickramasinghe/",
+    github: "https://github.com/manupawickramasinghe",
+    blog: "http://manupawick.blogspot.com/"
+  }
 };
