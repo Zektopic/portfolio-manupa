@@ -1,5 +1,6 @@
 export const experienceData = [
   {
+    id: 1,
     company: "Sitecore",
     logo: "/logos/sitecore.png",
     position: "Cloud Infrastructure Engineer",
@@ -9,6 +10,7 @@ export const experienceData = [
     skills: ["Terraform", "Microsoft Azure", "+12 skills"]
   },
   {
+    id: 2,
     company: "IGT1 Lanka",
     logo: "/logos/igt1.png",
     position: "Cloud Infrastructure Engineer",
@@ -17,6 +19,7 @@ export const experienceData = [
     location: "Colombo, Western Province, Sri Lanka · Hybrid"
   },
   {
+    id: 3,
     company: "Renewaa Energy",
     logo: "/logos/renewaa.png",
     position: "Electronic Engineer",
@@ -26,6 +29,7 @@ export const experienceData = [
     skills: ["Artificial Intelligence (AI)", "C++", "+11 skills"]
   },
   {
+    id: 4,
     company: "General Sir John Kotelawala Defence University",
     logo: "/logos/kdu.png",
     position: "Temporary Instructor",
@@ -34,10 +38,12 @@ export const experienceData = [
     skills: ["KiCAD", "Electronics", "+1 skill"]
   },
   {
+    id: 5,
     company: "Azend Technologies",
     logo: "/logos/azend.png",
     positions: [
       {
+        id: 51,
         title: "[Associate] DevOps Engineer",
         type: "Full-time",
         duration: "Jan 2025 - Feb 2025 · 2 mos",
@@ -52,6 +58,7 @@ export const experienceData = [
         skills: ["Terraform", "DevOps", "+13 skills"]
       },
       {
+        id: 52,
         title: "[Associate] Embedded System Engineer / Associate DevOps Engineer",
         type: "Contract",
         duration: "Jul 2024 - Jan 2025 · 7 mos",
@@ -59,6 +66,7 @@ export const experienceData = [
         skills: ["DevOps", "C++", "+10 skills"]
       },
       {
+        id: 53,
         title: "[Intern] Embedded Systems Engineer",
         type: "Internship",
         duration: "Feb 2024 - Jul 2024 · 6 mos",
