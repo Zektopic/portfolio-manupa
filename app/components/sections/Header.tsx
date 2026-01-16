@@ -15,9 +15,9 @@ import { Globe, Linkedin, Github, Users, UserPlus, LocateFixed } from 'lucide-re
 
 import { ThemeToggle } from "../theme-toggle";
 
-export const Header = () => {
-  const initials = profileData.name.split(' ').map(n => n[0]).join('');
+const initials = profileData.name.split(' ').map(n => n[0]).join('');
 
+export const Header = () => {
   return (
     <Card className="rounded-3xl shadow-2xl overflow-hidden">
       <CardHeader className="relative flex flex-col md:flex-row items-center gap-8 p-8 md:p-12 bg-card/50">
