@@ -1,6 +1,6 @@
 import dynamic from 'next/dynamic';
+import { Header } from './components/sections';
 
-const Header = dynamic(() => import('./components/sections').then(mod => mod.Header));
 const About = dynamic(() => import('./components/sections').then(mod => mod.About));
 const FeaturedPosts = dynamic(() => import('./components/sections').then(mod => mod.FeaturedPosts));
 const Experience = dynamic(() => import('./components/sections').then(mod => mod.Experience));
