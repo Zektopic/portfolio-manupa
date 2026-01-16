@@ -5,7 +5,7 @@ import {
   CardTitle,
   CardDescription
 } from "@/components/ui/card";
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import { Avatar, AvatarFallback } from "@/components/ui/avatar";
 import { recommendationsData } from "../../data/recommendations";
 import { MessageCircle } from 'lucide-react';
 
@@ -19,8 +19,8 @@ export const Recommendations = () => {
         </CardTitle>
       </CardHeader>
       <CardContent className="space-y-6">
-        {recommendationsData.map((rec, idx) => (
-          <Card key={idx}>
+        {recommendationsData.map((rec) => (
+          <Card key={rec.name}>
             <CardHeader className="flex flex-row items-center gap-4">
               <Avatar className="w-16 h-16">
                 <AvatarFallback>{rec.name.split(' ').map(n => n[0]).join('')}</AvatarFallback>
