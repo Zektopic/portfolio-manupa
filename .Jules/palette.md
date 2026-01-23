@@ -9,3 +9,12 @@
 ## 2026-01-20 - [Radix State Styling]
 **Learning:** Shadcn/Radix components expose state via `data-state` attributes. To style children (like icons) based on this state, use the Tailwind `group` class on the component receiving the state, and `group-data-[state=open]:{utility}` on the child.
 **Action:** Use this pattern for all collapsible/expandable indicators to ensure visual feedback matches interaction state.
+## 2024-05-22 - [Invalid HTML Nesting with UI Components]
+**Learning:** Wrapping a UI library `Button` (which renders a `<button>`) inside an `<a>` tag creates invalid HTML (`<a ...><button ...>`), which causes accessibility issues.
+**Action:** Use the `asChild` prop (if supported by the UI library, like Radix UI Slot) on the `Button` component and nest the `<a>` tag inside it to merge props correctly and render a single `<a>` element with button styles.
+## 2025-05-18 - [Invalid Interactive Nesting]
+**Learning:** Wrapping a `Button` component with an anchor `<a>` tag results in invalid HTML (`<a><button>...`) which can confuse screen readers and keyboard navigation.
+**Action:** Use the `asChild` prop on the `Button` component (e.g., `<Button asChild><a href="...">...</a></Button>`) to merge styles onto the anchor tag, maintaining valid HTML semantics.
+## 2026-01-23 - [Button as Child for Links]
+**Learning:** Wrapping a `<Button>` component inside an `<a>` tag results in invalid HTML (`<a ...><button ...>`) which can confuse screen readers.
+**Action:** Use the `asChild` prop on the `Button` component and place the `<a>` tag *inside* it. This renders the `<a>` with button styles, maintaining valid HTML semantics.
