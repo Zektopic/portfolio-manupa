@@ -9,3 +9,6 @@
 ## 2025-05-18 - [Invalid Interactive Nesting]
 **Learning:** Wrapping a `Button` component with an anchor `<a>` tag results in invalid HTML (`<a><button>...`) which can confuse screen readers and keyboard navigation.
 **Action:** Use the `asChild` prop on the `Button` component (e.g., `<Button asChild><a href="...">...</a></Button>`) to merge styles onto the anchor tag, maintaining valid HTML semantics.
+## 2026-01-23 - [Button as Child for Links]
+**Learning:** Wrapping a `<Button>` component inside an `<a>` tag results in invalid HTML (`<a ...><button ...>`) which can confuse screen readers.
+**Action:** Use the `asChild` prop on the `Button` component and place the `<a>` tag *inside* it. This renders the `<a>` with button styles, maintaining valid HTML semantics.
