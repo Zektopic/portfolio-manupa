@@ -19,8 +19,8 @@ export const Projects = () => {
         </CardTitle>
       </CardHeader>
       <CardContent className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {projectsData.map((project, idx) => (
-          <Card key={idx}>
+        {projectsData.map((project) => (
+          <Card key={project.title}>
             <CardHeader>
               <CardTitle>{project.title}</CardTitle>
               {project.duration && (
@@ -30,8 +30,8 @@ export const Projects = () => {
             <CardContent>
               <p className="text-muted-foreground mb-4">{project.description}</p>
               <div className="flex flex-wrap gap-2">
-                {project.skills.map((skill, i) => (
-                  <Badge key={i} variant="secondary">{skill}</Badge>
+                {project.skills.map((skill) => (
+                  <Badge key={skill} variant="secondary">{skill}</Badge>
                 ))}
               </div>
             </CardContent>
