@@ -25,8 +25,8 @@ export const Experience = () => {
         </CardTitle>
       </CardHeader>
       <CardContent className="space-y-8">
-        {experienceData.map((company, companyIdx) => (
-          <div key={companyIdx} className="space-y-4">
+        {experienceData.map((company) => (
+          <div key={company.id} className="space-y-4">
             <div className="flex items-center gap-4">
               <Avatar className="w-12 h-12">
                 <AvatarImage src={company.logo} alt={company.company} />
@@ -36,8 +36,8 @@ export const Experience = () => {
             </div>
             <div className="space-y-6 pl-8">
               {company.positions ? (
-                company.positions.map((position, posIdx) => (
-                  <Card key={posIdx} className="relative">
+                company.positions.map((position) => (
+                  <Card key={position.id} className="relative">
                     {/* Timeline line */}
                     <div className="absolute left-[-2rem] top-8 bottom-0 w-0.5 bg-border"></div>
                     {/* Timeline dot */}
@@ -60,9 +60,9 @@ export const Experience = () => {
                       </div>
                       <Collapsible>
                         <CollapsibleTrigger asChild>
-                          <Button variant="outline" size="sm" className="flex items-center gap-2">
+                          <Button variant="outline" size="sm" className="flex items-center gap-2 group">
                             Details
-                            <ChevronDown className="w-4 h-4" />
+                            <ChevronDown className="w-4 h-4 transition-transform duration-200 group-data-[state=open]:rotate-180" />
                           </Button>
                         </CollapsibleTrigger>
                         <CollapsibleContent className="pt-4">

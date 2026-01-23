@@ -15,9 +15,9 @@ import { Globe, Linkedin, Github, Users, UserPlus, LocateFixed } from 'lucide-re
 
 import { ThemeToggle } from "../theme-toggle";
 
-export const Header = () => {
-  const initials = profileData.name.split(' ').map(n => n[0]).join('');
+const initials = profileData.name.split(' ').map(n => n[0]).join('');
 
+export const Header = () => {
   return (
     <Card className="rounded-3xl shadow-2xl overflow-hidden">
       <CardHeader className="relative flex flex-col md:flex-row items-center gap-8 p-8 md:p-12 bg-card/50">
@@ -60,39 +60,39 @@ export const Header = () => {
         </Badge>
         <div className="flex-grow"></div>
         <div className="flex gap-2">
-          <a
-            href={profileData.socials.linkedin}
-            target="_blank"
-            rel="noreferrer"
-            aria-label="Visit LinkedIn profile"
-            title="LinkedIn"
-          >
-            <Button variant="outline" size="icon">
+          <Button variant="outline" size="icon" asChild>
+            <a
+              href={profileData.socials.linkedin}
+              target="_blank"
+              rel="noreferrer"
+              aria-label="Visit LinkedIn profile"
+              title="LinkedIn"
+            >
               <Linkedin className="h-4 w-4" />
-            </Button>
-          </a>
-          <a
-            href={profileData.socials.github}
-            target="_blank"
-            rel="noreferrer"
-            aria-label="Visit GitHub profile"
-            title="GitHub"
-          >
-            <Button variant="outline" size="icon">
+            </a>
+          </Button>
+          <Button variant="outline" size="icon" asChild>
+            <a
+              href={profileData.socials.github}
+              target="_blank"
+              rel="noreferrer"
+              aria-label="Visit GitHub profile"
+              title="GitHub"
+            >
               <Github className="h-4 w-4" />
-            </Button>
-          </a>
-          <a
-            href={profileData.socials.blog}
-            target="_blank"
-            rel="noreferrer"
-            aria-label="Visit Blog"
-            title="Blog"
-          >
-            <Button variant="outline" size="icon">
+            </a>
+          </Button>
+          <Button variant="outline" size="icon" asChild>
+            <a
+              href={profileData.socials.blog}
+              target="_blank"
+              rel="noreferrer"
+              aria-label="Visit Blog"
+              title="Blog"
+            >
               <Globe className="h-4 w-4" />
-            </Button>
-          </a>
+            </a>
+          </Button>
         </div>
       </CardFooter>
     </Card>
