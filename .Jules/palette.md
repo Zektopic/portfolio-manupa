@@ -21,3 +21,7 @@
 ## 2026-01-23 - [Button as Child for Links]
 **Learning:** Wrapping a `<Button>` component inside an `<a>` tag results in invalid HTML (`<a ...><button ...>`) which can confuse screen readers.
 **Action:** Use the `asChild` prop on the `Button` component and place the `<a>` tag *inside* it. This renders the `<a>` with button styles, maintaining valid HTML semantics.
+
+## 2025-05-23 - [Actionable Metadata]
+**Learning:** Static metadata like location often feels like a dead end. Users expect to be able to interact with it.
+**Action:** Convert static metadata fields (location, email, phone) into actionable links (maps, mailto, tel) to reduce friction and add delight.

@@ -37,10 +37,16 @@ export const Header = () => {
           <CardDescription className="text-xl mb-4 font-medium">
             {profileData.title}
           </CardDescription>
-          <div className="flex items-center justify-center md:justify-start gap-2 text-muted-foreground mb-6">
-            <LocateFixed className="w-5 h-5" />
-            {profileData.location}
-          </div>
+          <a
+            href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(profileData.location)}`}
+            target="_blank"
+            rel="noreferrer"
+            className="flex items-center justify-center md:justify-start gap-2 text-muted-foreground mb-6 hover:text-primary transition-colors group"
+            aria-label={`View ${profileData.location} on Google Maps`}
+          >
+            <LocateFixed className="w-5 h-5 group-hover:text-primary transition-colors" />
+            <span className="group-hover:underline underline-offset-4">{profileData.location}</span>
+          </a>
         </div>
       </CardHeader>
       <CardContent className="p-8 md:p-12">
