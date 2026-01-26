@@ -60,7 +60,12 @@ export const Experience = () => {
                       </div>
                       <Collapsible>
                         <CollapsibleTrigger asChild>
-                          <Button variant="outline" size="sm" className="flex items-center gap-2 group">
+                          <Button
+                            variant="outline"
+                            size="sm"
+                            className="flex items-center gap-2 group"
+                            aria-label={`Show details for ${position.title} at ${company.company}`}
+                          >
                             Details
                             <ChevronDown className="w-4 h-4 transition-transform duration-200 group-data-[state=open]:rotate-180" />
                           </Button>
