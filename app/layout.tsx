@@ -19,6 +19,7 @@ export const metadata: Metadata = {
 
 import { ThemeProvider } from "./components/theme-provider";
 import { SkipLink } from "./components/skip-link";
+import { ScrollToTop } from "./components/scroll-to-top";
 
 export default function RootLayout({
   children,
@@ -38,6 +39,7 @@ export default function RootLayout({
         >
           {children}
         </ThemeProvider>
+        <ScrollToTop />
       </body>
     </html>
   );
