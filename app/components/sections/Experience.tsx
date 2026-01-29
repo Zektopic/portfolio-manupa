@@ -53,10 +53,16 @@ export const Experience = () => {
                           <Calendar className="w-4 h-4" />
                           {position.duration}
                         </div>
-                        <div className="flex items-center gap-1">
+                        <a
+                          href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(position.location || "")}`}
+                          target="_blank"
+                          rel="noreferrer"
+                          className="flex items-center gap-1 hover:text-primary transition-colors"
+                          aria-label={`View ${position.location} on Google Maps`}
+                        >
                           <MapPin className="w-4 h-4" />
                           {position.location}
-                        </div>
+                        </a>
                       </div>
                       <Collapsible>
                         <CollapsibleTrigger asChild>
@@ -107,10 +113,16 @@ export const Experience = () => {
                         <Calendar className="w-4 h-4" />
                         {company.duration}
                       </div>
-                      <div className="flex items-center gap-1">
+                      <a
+                        href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(company.location || "")}`}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="flex items-center gap-1 hover:text-primary transition-colors"
+                        aria-label={`View ${company.location} on Google Maps`}
+                      >
                         <MapPin className="w-4 h-4" />
                         {company.location}
-                      </div>
+                      </a>
                     </div>
                     {company.skills && (
                       <div className="flex flex-wrap gap-2">
