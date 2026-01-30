@@ -25,3 +25,7 @@
 ## 2025-05-23 - [Actionable Metadata]
 **Learning:** Static metadata like location often feels like a dead end. Users expect to be able to interact with it.
 **Action:** Convert static metadata fields (location, email, phone) into actionable links (maps, mailto, tel) to reduce friction and add delight.
+
+## 2026-02-24 - [Ghost Focus on Hidden Elements]
+**Learning:** Elements hidden with `opacity: 0` remain in the focus order, confusing keyboard users who can tab to invisible controls.
+**Action:** When hiding interactive elements visually (but keeping them in DOM), always remove them from the tab order using `tabIndex={-1}` or `aria-hidden="true"`.
