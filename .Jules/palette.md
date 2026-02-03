@@ -26,6 +26,9 @@
 **Learning:** Static metadata like location often feels like a dead end. Users expect to be able to interact with it.
 **Action:** Convert static metadata fields (location, email, phone) into actionable links (maps, mailto, tel) to reduce friction and add delight.
 
+## 2025-05-24 - [Global Fixed Elements Stacking]
+**Learning:** Placing fixed elements (like 'Scroll to Top') early in `layout.tsx` (e.g., before `{children}`) can cause them to be intercepted by page content, even with high z-index, if the page content creates a new stacking context or sits higher in the DOM order without z-index management.
+**Action:** Always place global fixed overlays/buttons at the very end of the `<body>` in `layout.tsx` to ensure they naturally stack on top of all page content.
 ## 2025-05-24 - [Dynamic ARIA Labels from Content]
 **Learning:** When data lacks explicit titles (e.g., social posts), extracting the first sentence or line of the content can provide a meaningful context for `aria-label` on "Read more" links.
 **Action:** Use a helper function to extract and truncate the first meaningful line of text to construct accessible names for otherwise ambiguous links.
