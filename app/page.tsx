@@ -14,7 +14,7 @@ const Footer = dynamic(() => import('./components/sections').then(mod => mod.Foo
 export default function Home() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-50 via-blue-50 to-indigo-50 dark:from-zinc-950 dark:via-blue-950 dark:to-indigo-950">
-      <main className="container mx-auto px-4 py-12 max-w-6xl">
+      <main id="main-content" className="container mx-auto px-4 py-12 max-w-6xl">
         <Header />
         <About />
         <FeaturedPosts />

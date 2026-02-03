@@ -18,6 +18,8 @@ export const metadata: Metadata = {
 };
 
 import { ThemeProvider } from "./components/theme-provider";
+import { SkipLink } from "./components/skip-link";
+import { ScrollToTop } from "./components/scroll-to-top";
 
 export default function RootLayout({
   children,
@@ -29,12 +31,14 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
+        <SkipLink />
         <ThemeProvider
           attribute="class"
           defaultTheme="system"
           enableSystem
         >
           {children}
+          <ScrollToTop />
         </ThemeProvider>
       </body>
     </html>
