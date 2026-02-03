@@ -25,3 +25,7 @@
 ## 2025-05-23 - [Actionable Metadata]
 **Learning:** Static metadata like location often feels like a dead end. Users expect to be able to interact with it.
 **Action:** Convert static metadata fields (location, email, phone) into actionable links (maps, mailto, tel) to reduce friction and add delight.
+
+## 2025-05-24 - [Dynamic ARIA Labels from Content]
+**Learning:** When data lacks explicit titles (e.g., social posts), extracting the first sentence or line of the content can provide a meaningful context for `aria-label` on "Read more" links.
+**Action:** Use a helper function to extract and truncate the first meaningful line of text to construct accessible names for otherwise ambiguous links.
