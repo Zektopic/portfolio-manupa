@@ -10,6 +10,11 @@ import { featuredPosts } from "../../data/projects";
 import { ThumbsUp, MessageSquare, Rss } from 'lucide-react';
 import Link from "next/link";
 
+const getPostTitle = (content: string) => {
+  const firstLine = content.split('\n').find(line => line.trim().length > 0);
+  return firstLine ? firstLine.substring(0, 60) : 'post';
+}
+
 export const FeaturedPosts = () => {
   return (
     <Card>
@@ -25,7 +30,13 @@ export const FeaturedPosts = () => {
             <CardContent className="pt-6">
               <p className="text-muted-foreground mb-4 whitespace-pre-line">{post.content}</p>
               {post.link && (
-                <Link href={post.link} target="_blank" rel="noreferrer" className="text-primary hover:underline">
+                <Link
+                  href={post.link}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="text-primary hover:underline"
+                  aria-label={`Read more about ${getPostTitle(post.content)}`}
+                >
                   Read more
                 </Link>
               )}
