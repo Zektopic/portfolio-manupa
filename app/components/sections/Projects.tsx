@@ -20,7 +20,7 @@ export const Projects = () => {
       </CardHeader>
       <CardContent className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
         {projectsData.map((project) => (
-          <Card key={project.title}>
+          <Card key={project.title} className="break-inside-avoid">
             <CardHeader>
               <CardTitle>{project.title}</CardTitle>
               {project.duration && (

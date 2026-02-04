@@ -19,7 +19,7 @@ export const Education = () => {
       </CardHeader>
       <CardContent className="space-y-6">
         {educationData.map((edu, idx) => (
-          <div key={idx} className="flex items-start gap-4">
+          <div key={idx} className="flex items-start gap-4 break-inside-avoid">
             <Avatar className="w-12 h-12">
               <AvatarImage src={edu.logo} alt={edu.institution} />
               <AvatarFallback>{edu.institution.charAt(0)}</AvatarFallback>

@@ -21,7 +21,7 @@ export const Header = () => {
   return (
     <Card className="rounded-3xl shadow-2xl overflow-hidden">
       <CardHeader className="relative flex flex-col md:flex-row items-center gap-8 p-8 md:p-12 bg-card/50">
-        <div className="absolute top-4 right-4">
+        <div className="absolute top-4 right-4 print:hidden">
           <ThemeToggle />
         </div>
         <Avatar className="w-40 h-40">

@@ -32,3 +32,7 @@
 ## 2025-05-24 - [Dynamic ARIA Labels from Content]
 **Learning:** When data lacks explicit titles (e.g., social posts), extracting the first sentence or line of the content can provide a meaningful context for `aria-label` on "Read more" links.
 **Action:** Use a helper function to extract and truncate the first meaningful line of text to construct accessible names for otherwise ambiguous links.
+
+## 2025-05-25 - [Print Optimization]
+**Learning:** Portfolios and resumes are often printed or saved as PDFs. Interactive elements (toggles, scroll buttons) and page breaks inside content cards degrade this experience.
+**Action:** Use `print:hidden` for interactive-only elements and `break-inside-avoid` for atomic content cards (experience items, project cards) to ensure a clean print layout.

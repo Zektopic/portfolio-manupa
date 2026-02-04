@@ -39,7 +39,7 @@ export function ScrollToTop() {
       variant="outline"
       size="icon"
       className={cn(
-        "fixed bottom-4 right-4 z-50 rounded-full transition-all duration-300 shadow-md",
+        "fixed bottom-4 right-4 z-50 rounded-full transition-all duration-300 shadow-md print:hidden",
         isVisible
           ? "opacity-100 translate-y-0 pointer-events-auto"
           : "opacity-0 translate-y-4 pointer-events-none"
