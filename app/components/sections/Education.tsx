@@ -25,6 +25,16 @@ export const Education = () => {
         </CardTitle>
       </CardHeader>
       <CardContent className="space-y-6">
+        {educationData.map((edu, idx) => (
+          <div key={idx} className="flex items-start gap-4 break-inside-avoid">
+            <Avatar className="w-12 h-12">
+              <AvatarImage src={edu.logo} alt={edu.institution} />
+              <AvatarFallback>{edu.institution.charAt(0)}</AvatarFallback>
+            </Avatar>
+            <div>
+              <h3 className="text-lg font-semibold">{edu.institution}</h3>
+              <p className="text-muted-foreground">{edu.degree}</p>
+              <p className="text-sm text-muted-foreground">{edu.duration}</p>
         {educationData.map((edu, idx) => {
           const hasDetails = (edu.activities && edu.activities.length > 0) || (edu.skills && edu.skills.length > 0);
 

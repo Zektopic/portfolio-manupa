@@ -26,7 +26,7 @@ export const FeaturedPosts = () => {
       </CardHeader>
       <CardContent className="space-y-6">
         {featuredPosts.slice(0, 3).map((post, idx) => (
-          <Card key={idx}>
+          <Card key={idx} className="break-inside-avoid">
             <CardContent className="pt-6">
               <p className="text-muted-foreground mb-4 whitespace-pre-line">{post.content}</p>
               {post.link && (

@@ -37,7 +37,7 @@ export const Experience = () => {
             <div className="space-y-6 pl-8">
               {company.positions ? (
                 company.positions.map((position) => (
-                  <Card key={position.id} className="relative">
+                  <Card key={position.id} className="relative break-inside-avoid">
                     {/* Timeline line */}
                     <div className="absolute left-[-2rem] top-8 bottom-0 w-0.5 bg-border"></div>
                     {/* Timeline dot */}
@@ -97,7 +97,7 @@ export const Experience = () => {
                   </Card>
                 ))
               ) : (
-                <Card className="relative">
+                <Card className="relative break-inside-avoid">
                   {/* Timeline line */}
                   <div className="absolute left-[-2rem] top-8 bottom-0 w-0.5 bg-border"></div>
                   {/* Timeline dot */}
