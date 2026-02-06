@@ -36,3 +36,6 @@
 ## 2025-05-25 - [Print Optimization]
 **Learning:** Portfolios and resumes are often printed or saved as PDFs. Interactive elements (toggles, scroll buttons) and page breaks inside content cards degrade this experience.
 **Action:** Use `print:hidden` for interactive-only elements and `break-inside-avoid` for atomic content cards (experience items, project cards) to ensure a clean print layout.
+## 2026-02-18 - [Secondary Information Disclosure Pattern]
+**Learning:** To keep list items (like Experience or Education) clean, secondary details (activities, long descriptions, skills) should be hidden behind a collapsible "Details" toggle.
+**Action:** Use the `Collapsible` component with an `outline` or `ghost` button labeled "Details" (with aria-label context) to reveal this info on demand.
