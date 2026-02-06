@@ -32,3 +32,7 @@
 ## 2025-05-24 - [Dynamic ARIA Labels from Content]
 **Learning:** When data lacks explicit titles (e.g., social posts), extracting the first sentence or line of the content can provide a meaningful context for `aria-label` on "Read more" links.
 **Action:** Use a helper function to extract and truncate the first meaningful line of text to construct accessible names for otherwise ambiguous links.
+
+## 2026-02-18 - [Secondary Information Disclosure Pattern]
+**Learning:** To keep list items (like Experience or Education) clean, secondary details (activities, long descriptions, skills) should be hidden behind a collapsible "Details" toggle.
+**Action:** Use the `Collapsible` component with an `outline` or `ghost` button labeled "Details" (with aria-label context) to reveal this info on demand.
