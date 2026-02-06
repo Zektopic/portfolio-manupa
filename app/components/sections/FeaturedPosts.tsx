@@ -7,7 +7,7 @@ import {
 } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { featuredPosts } from "../../data/projects";
-import { ThumbsUp, MessageSquare, Rss } from 'lucide-react';
+import { ThumbsUp, MessageSquare, Rss, ExternalLink } from 'lucide-react';
 import Link from "next/link";
 
 const getPostTitle = (content: string) => {
@@ -34,10 +34,11 @@ export const FeaturedPosts = () => {
                   href={post.link}
                   target="_blank"
                   rel="noreferrer"
-                  className="text-primary hover:underline"
+                  className="inline-flex items-center gap-1 text-primary hover:underline"
                   aria-label={`Read more about ${getPostTitle(post.content)}`}
                 >
                   Read more
+                  <ExternalLink className="h-3 w-3" />
                 </Link>
               )}
             </CardContent>
