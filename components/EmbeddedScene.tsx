@@ -52,7 +52,7 @@ export default function EmbeddedScene() {
         <HackerObject />
         
         {/* Postprocessing for the Cyberpunk Neon Glow */}
-        <EffectComposer disableNormalPass>
+        <EffectComposer>
           <Bloom 
             luminanceThreshold={1} 
             mipmapBlur 

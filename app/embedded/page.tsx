@@ -42,7 +42,7 @@ export default function EmbeddedExperience() {
            transition={{ duration: 0.1, delay: 0.2 }}
            className="absolute top-8 left-8 md:top-12 md:left-12"
         >
-          <Link href="/" className="inline-flex items-center gap-2 text-green-500 hover:text-green-400 hover:bg-green-500/10 transition-colors bg-gray-900/80 px-4 py-2 border border-green-500/30 uppercase tracking-widest text-sm">
+          <Link href="/" className="inline-flex items-center gap-2 text-green-400 hover:text-green-300 hover:bg-green-400/20 transition-colors bg-gray-950/90 px-4 py-2 border border-green-500/50 uppercase tracking-widest text-sm backdrop-blur-md">
             <ArrowLeft className="w-4 h-4" />
             <span>[ Return ]</span>
           </Link>
@@ -53,17 +53,17 @@ export default function EmbeddedExperience() {
           initial={{ opacity: 0, scale: 0.95 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.2, delay: 0.4 }}
-          className="w-full max-w-5xl mx-auto bg-gray-950/80 backdrop-blur-sm p-8 md:p-16 border-l-4 border-r border-y border-green-500/50 shadow-[0_0_15px_rgba(0,255,0,0.1)] relative overflow-hidden"
+          className="w-full max-w-5xl mx-auto bg-gray-950/95 backdrop-blur-xl p-8 md:p-16 border-l-4 border-r border-y border-green-500/50 shadow-[0_0_30px_rgba(0,255,0,0.15)] relative overflow-hidden"
         >
           {/* Scanline effect */}
           <div className="absolute inset-0 pointer-events-none bg-[linear-gradient(rgba(18,16,16,0)_50%,rgba(0,0,0,0.25)_50%),linear-gradient(90deg,rgba(255,0,0,0.06),rgba(0,255,0,0.02),rgba(0,0,255,0.06))] bg-[length:100%_4px,3px_100%]" />
 
-          <div className="mb-2 text-green-500/50 text-xs tracking-widest uppercase flex items-center gap-2">
-            <span className="w-2 h-2 bg-green-500 animate-pulse" />
+          <div className="mb-2 text-green-400/80 text-xs tracking-widest uppercase flex items-center gap-2">
+            <span className="w-2 h-2 bg-green-400 animate-pulse" />
             System Online // User: Root
           </div>
 
-          <h1 className="text-4xl md:text-6xl font-bold tracking-tight text-green-400 mb-6 drop-shadow-[0_0_8px_rgba(0,255,0,0.8)] h-16 md:h-20">
+          <h1 className="text-4xl md:text-6xl font-bold tracking-tight text-green-300 mb-6 drop-shadow-[0_0_12px_rgba(0,255,0,0.8)] h-16 md:h-20">
             &gt; {titleText}<span className="animate-pulse">_</span>
           </h1>
 
@@ -71,7 +71,7 @@ export default function EmbeddedExperience() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.1, delay: 1.5 }}
-            className="text-lg md:text-xl text-green-500/80 mb-16 max-w-2xl leading-relaxed"
+            className="text-lg md:text-xl text-green-400 mb-16 max-w-2xl leading-relaxed"
           >
             Developing low-level firmware, optimizing microcontrollers, and building the bridge between hardware and connected IoT ecosystems.
           </motion.p>
@@ -114,16 +114,16 @@ function ServiceCard({ delay, icon, title, description }: { delay: number, icon:
       initial={{ opacity: 0, x: -20 }}
       animate={{ opacity: 1, x: 0 }}
       transition={{ duration: 0.2, delay }}
-      whileHover={{ scale: 1.02, backgroundColor: "rgba(0, 255, 0, 0.05)" }}
-      className="bg-gray-900/60 p-6 border border-green-500/20 hover:border-green-500/50 transition-all duration-150 flex flex-col gap-4 group"
+      whileHover={{ scale: 1.02, backgroundColor: "rgba(0, 255, 0, 0.1)" }}
+      className="bg-gray-900/80 p-6 border border-green-500/40 hover:border-green-400 transition-all duration-150 flex flex-col gap-4 group backdrop-blur-sm"
     >
       <div className="flex items-center gap-4">
-        <div className="bg-gray-950 p-3 border border-green-500/30 group-hover:shadow-[0_0_10px_rgba(0,255,0,0.3)] transition-shadow">
+        <div className="bg-gray-950 p-3 border border-green-400/50 group-hover:shadow-[0_0_15px_rgba(0,255,0,0.4)] transition-shadow">
           {icon}
         </div>
-        <h3 className="text-xl font-bold tracking-wider">{title}</h3>
+        <h3 className="text-xl font-bold tracking-wider text-green-300">{title}</h3>
       </div>
-      <p className="text-green-500/70 text-sm leading-relaxed border-t border-green-500/10 pt-4 mt-2">
+      <p className="text-green-400/90 text-sm leading-relaxed border-t border-green-500/30 pt-4 mt-2">
         {description}
       </p>
     </motion.div>

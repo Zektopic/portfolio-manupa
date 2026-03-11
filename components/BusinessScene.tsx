@@ -37,12 +37,12 @@ export default function BusinessScene() {
       {/* Background gradients for a premium corporate feel */}
       <div className="absolute inset-0 bg-gradient-to-br from-slate-100 via-slate-50 to-slate-200" />
       
-      <Canvas camera={{ position: [0, 0, 8], fov: 50 }}>
-        <ambientLight intensity={0.8} />
+      <Canvas camera={{ position: [0, 0, 10], fov: 50 }}>
+        <ambientLight intensity={0.5} />
         {/* Warm light from one side, cool from the other for a nice metallic reflection */}
-        <directionalLight position={[10, 10, 5]} intensity={2} color="#ffffff" />
-        <directionalLight position={[-10, -10, -5]} intensity={1} color="#3b82f6" />
-        <directionalLight position={[0, -5, 10]} intensity={0.5} color="#ea580c" />
+        <directionalLight position={[15, 10, 5]} intensity={1.5} color="#ffffff" />
+        <directionalLight position={[-15, -10, -5]} intensity={1} color="#3b82f6" />
+        <directionalLight position={[0, -5, 15]} intensity={0.5} color="#ea580c" />
         
         <AbstractShape />
       </Canvas>

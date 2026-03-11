@@ -4,7 +4,7 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import { ThemeProvider, createTheme } from "@mui/material/styles";
 import { IconButton, Popover, Box } from "@mui/material";
-import { Palette, Cloud, Cpu, Briefcase } from "lucide-react";
+import { Palette, Cloud, Cpu, Briefcase, Linkedin, Mail, FileText, Link as LinkIcon } from "lucide-react";
 import Link from "next/link";
 
 // Predefined color presets for the liquid glass UI
@@ -123,12 +123,30 @@ export default function LiquidGlassHero() {
           {/* Inner highlight logic for that glass edge look */}
           <div className="absolute inset-0 rounded-[3rem] border border-white/80 pointer-events-none" style={{ maskImage: "linear-gradient(to bottom, black, transparent)" }} />
           
-          <div className="text-center space-y-6 relative z-10">
+          <div className="text-center space-y-6 relative z-10 flex flex-col items-center">
+            {/* Profile Avatar Placeholder */}
+            <motion.div
+              initial={{ scale: 0, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              transition={{ delay: 0.1, duration: 0.8, type: "spring", stiffness: 100 }}
+              className="relative w-32 h-32 md:w-40 md:h-40 rounded-full border-4 border-white/60 shadow-xl overflow-hidden mb-2 bg-slate-200/50 backdrop-blur-sm flex items-center justify-center group"
+            >
+              {/* Optional: Add an actual image tag here when ready */}
+              {/* <img src="/profile-image.jpg" alt="Profile" className="w-full h-full object-cover" /> */}
+              <span className="text-slate-500 font-medium text-lg uppercase tracking-widest group-hover:scale-110 transition-transform duration-500">Photo</span>
+              
+              {/* Subtle inner glowing ring based on active theme */}
+              <div 
+                className="absolute inset-0 rounded-full border-2 opacity-50 pointer-events-none" 
+                style={{ borderColor: activeColor.primary }} 
+              />
+            </motion.div>
+
             <motion.div
               initial={{ scale: 0.9, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
               transition={{ delay: 0.2, duration: 0.8 }}
-              className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-white/50 bg-white/40 backdrop-blur-md mb-4 text-sm font-medium text-slate-600 shadow-sm"
+              className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-white/50 bg-white/40 backdrop-blur-md text-sm font-medium text-slate-600 shadow-sm"
             >
               <span className="w-2 h-2 rounded-full animate-pulse" style={{ backgroundColor: activeColor.primary }}></span>
               Available for new opportunities
@@ -143,13 +161,26 @@ export default function LiquidGlassHero() {
               Portfolio <span className="font-semibold transition-colors duration-1000" style={{ color: activeColor.primary }}>Experiences</span>
             </motion.h1>
             <motion.p
-              className="text-lg md:text-2xl text-slate-600 max-w-2xl mx-auto font-light leading-relaxed"
+              className="text-lg md:text-2xl text-slate-600 max-w-2xl mx-auto font-light leading-relaxed mb-8"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.5, duration: 1 }}
             >
               Select an environment below to explore different facets of my technical expertise and background.
             </motion.p>
+
+            {/* Social Links Row */}
+            <motion.div 
+               initial={{ opacity: 0, y: 20 }}
+               animate={{ opacity: 1, y: 0 }}
+               transition={{ delay: 0.6, duration: 0.8 }}
+               className="flex items-center justify-center gap-4 mt-6"
+            >
+              <SocialButton href="https://linkedin.com" icon={<Linkedin className="w-5 h-5" />} color={activeColor.primary} ariaLabel="LinkedIn" />
+              <SocialButton href="mailto:email@example.com" icon={<Mail className="w-5 h-5" />} color={activeColor.primary} ariaLabel="Email" />
+              <SocialButton href="https://blog.example.com" icon={<FileText className="w-5 h-5" />} color={activeColor.primary} ariaLabel="Blog" />
+              <SocialButton href="https://linktr.ee" icon={<LinkIcon className="w-5 h-5" />} color={activeColor.primary} ariaLabel="Linktree" />
+            </motion.div>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-16 relative z-10">
@@ -206,6 +237,29 @@ function NavButton({ href, icon, title, description, color, delay }: { href: str
         </div>
         <h2 className="text-2xl font-semibold text-slate-800 mb-3">{title}</h2>
         <p className="text-slate-600 font-medium">{description}</p>
+      </motion.div>
+    </Link>
+  );
+}
+
+function SocialButton({ href, icon, color, ariaLabel }: { href: string; icon: React.ReactNode; color: string; ariaLabel: string }) {
+  return (
+    <Link 
+      href={href} 
+      target="_blank" 
+      rel="noopener noreferrer" 
+      aria-label={ariaLabel}
+      className="group outline-none"
+    >
+      <motion.div
+        whileHover={{ y: -4, scale: 1.1 }}
+        whileTap={{ scale: 0.9 }}
+        className="w-10 h-10 rounded-full bg-white/50 backdrop-blur-md border border-white/60 shadow-sm flex items-center justify-center text-slate-600 transition-colors duration-300 hover:bg-white/80"
+        style={{ '--hover-color': color } as React.CSSProperties}
+      >
+        <div className="transition-colors duration-300 group-hover:text-[var(--hover-color)]">
+          {icon}
+        </div>
       </motion.div>
     </Link>
   );
