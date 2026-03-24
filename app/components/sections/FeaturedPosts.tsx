@@ -7,12 +7,33 @@ import {
 } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { featuredPosts } from "../../data/projects";
+import { profileData } from "../../data/profile";
 import { ThumbsUp, MessageSquare, Rss, ExternalLink } from 'lucide-react';
-import Link from "next/link";
 
 const getPostTitle = (content: string) => {
   const firstLine = content.split('\n').find(line => line.trim().length > 0);
   return firstLine ? firstLine.substring(0, 60) : 'post';
+}
+
+const hasAbsoluteUrlScheme = (rawLink: string) => /^[a-zA-Z][a-zA-Z\d+\-.]*:/.test(rawLink);
+
+const getPostHref = (value: string) => {
+  const link = value.trim();
+  if (!link) return "";
+
+  if (link.startsWith("//")) return `https:${link}`;
+  if (hasAbsoluteUrlScheme(link)) return link;
+  if (link.startsWith("www.")) return `https://${link}`;
+
+  const blogBase = profileData.socials.blog.trim();
+  try {
+    return new URL(link, blogBase).toString();
+  } catch {
+    if (process.env.NODE_ENV !== "production") {
+      console.warn("Invalid featured post link or blog base URL", { link, blogBase });
+    }
+    return link;
+  }
 }
 
 export const FeaturedPosts = () => {
@@ -30,8 +51,8 @@ export const FeaturedPosts = () => {
             <CardContent className="pt-6">
               <p className="text-muted-foreground mb-4 whitespace-pre-line">{post.content}</p>
               {post.link && (
-                <Link
-                  href={post.link}
+                <a
+                  href={getPostHref(post.link)}
                   target="_blank"
                   rel="noreferrer"
                   className="inline-flex items-center gap-1 text-primary hover:underline"
@@ -39,7 +60,7 @@ export const FeaturedPosts = () => {
                 >
                   Read more
                   <ExternalLink className="h-3 w-3" />
-                </Link>
+                </a>
               )}
             </CardContent>
             <CardFooter className="flex flex-wrap items-center justify-between gap-4">
