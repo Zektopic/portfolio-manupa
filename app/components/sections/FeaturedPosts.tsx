@@ -15,20 +15,23 @@ const getPostTitle = (content: string) => {
   return firstLine ? firstLine.substring(0, 60) : 'post';
 }
 
-const hasUriScheme = (value: string) => /^[a-zA-Z][a-zA-Z\d+\-.]*:/.test(value);
+const hasAbsoluteUrlScheme = (rawLink: string) => /^[a-zA-Z][a-zA-Z\d+\-.]*:/.test(rawLink);
 
 const getPostHref = (value: string) => {
   const link = value.trim();
   if (!link) return "";
 
   if (link.startsWith("//")) return `https:${link}`;
-  if (hasUriScheme(link)) return link;
+  if (hasAbsoluteUrlScheme(link)) return link;
   if (link.startsWith("www.")) return `https://${link}`;
 
   const blogBase = profileData.socials.blog.trim();
   try {
     return new URL(link, blogBase).toString();
   } catch {
+    if (process.env.NODE_ENV !== "production") {
+      console.warn("Invalid featured post link or blog base URL", { link, blogBase });
+    }
     return link;
   }
 }
