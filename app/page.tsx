@@ -156,7 +156,7 @@ export default function LiquidGlassHero() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.3, duration: 1 }}
             >
-              Portfolio <span className="font-semibold transition-colors duration-1000" style={{ color: activeColor.primary }}>Experiences</span>
+              Manupa <span className="font-semibold transition-colors duration-1000" style={{ color: activeColor.primary }}>Wickramasinghe</span>
             </motion.h1>
             <motion.p
               className="text-lg md:text-2xl text-slate-600 max-w-2xl mx-auto font-light leading-relaxed mb-8"
