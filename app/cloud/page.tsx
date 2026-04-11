@@ -4,33 +4,12 @@ import { motion } from "framer-motion";
 import CloudScene from "@/components/CloudScene";
 import { ArrowLeft, CloudCog, Server, Shield, Database, Briefcase } from "lucide-react";
 import Link from "next/link";
+import { experienceData } from "../data/experience";
+import { ExperiencePreviewCard } from "../components/experience-preview-card";
 
-const cloudExperience = [
-  {
-    company: "Sitecore",
-    role: "Cloud Infrastructure Engineer",
-    duration: "Feb 2025 – Present",
-    detail: "Terraform, Microsoft Azure · Remote",
-  },
-  {
-    company: "IGT1 Lanka",
-    role: "Cloud Infrastructure Engineer",
-    duration: "Feb 2025 – Present",
-    detail: "Colombo · Hybrid",
-  },
-  {
-    company: "Azend Technologies",
-    role: "[Associate] DevOps Engineer",
-    duration: "Jan 2025 – Feb 2025",
-    detail: "Jenkins, EC2, EKS, Terraform · Reduced deployments to 20–30 min",
-  },
-  {
-    company: "Renewaa Energy",
-    role: "Cloud & DevOps (Electronic Engineer)",
-    duration: "Dec 2024 – Jan 2026",
-    detail: "AWS EC2, GitOps pipelines, Jules · Cut deploy time from 3 hrs to 10 min",
-  },
-];
+const cloudExperience = experienceData.filter((e) =>
+  e.domains?.includes("cloud")
+);
 
 export default function CloudExperience() {
   return (
@@ -120,7 +99,18 @@ export default function CloudExperience() {
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               {cloudExperience.map((exp, i) => (
-                <ExperienceCard key={exp.company + exp.role} delay={1.7 + i * 0.1} {...exp} />
+                <ExperiencePreviewCard
+                  key={exp.slug}
+                  slug={exp.slug}
+                  company={exp.company}
+                  role={exp.position || ("positions" in exp ? exp.positions![0].title : "")}
+                  duration={exp.duration}
+                  detail={exp.location || ""}
+                  summary={exp.summary || ""}
+                  techStack={exp.techStack || []}
+                  variant="glass"
+                  delay={1.7 + i * 0.1}
+                />
               ))}
             </div>
           </motion.div>
@@ -144,22 +134,6 @@ function ServiceCard({ delay, icon, title, description }: { delay: number, icon:
       </div>
       <h3 className="text-xl font-medium text-slate-800">{title}</h3>
       <p className="text-slate-600 font-light leading-relaxed">{description}</p>
-    </motion.div>
-  );
-}
-
-function ExperienceCard({ delay, company, role, duration, detail }: { delay: number, company: string, role: string, duration: string, detail: string }) {
-  return (
-    <motion.div
-      initial={{ opacity: 0, y: 16 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.6, delay }}
-      className="bg-white/40 backdrop-blur-md p-5 rounded-2xl border border-white/50 shadow-sm flex flex-col gap-1"
-    >
-      <span className="text-xs font-semibold text-sky-600 uppercase tracking-wide">{duration}</span>
-      <h4 className="font-semibold text-slate-800">{company}</h4>
-      <p className="text-sm text-slate-700">{role}</p>
-      <p className="text-xs text-slate-500 mt-1">{detail}</p>
     </motion.div>
   );
 }

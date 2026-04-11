@@ -1,12 +1,13 @@
-"use client"; // Force cache invalidation
+"use client";
 
 import { motion } from "framer-motion";
 import EmbeddedScene from "@/components/EmbeddedScene";
 import { ArrowLeft, Cpu, Terminal, Wifi, Power } from "lucide-react";
 import Link from "next/link";
 import { useEffect, useState } from "react";
+import { experienceData } from "../data/experience";
+import { ExperiencePreviewCard } from "../components/experience-preview-card";
 
-// Optional typewriter effect hook
 function useTypewriter(text: string, speed: number = 30) {
   const [displayedText, setDisplayedText] = useState("");
 
@@ -26,38 +27,9 @@ function useTypewriter(text: string, speed: number = 30) {
   return displayedText;
 }
 
-const embeddedExperience = [
-  {
-    company: "Renewaa Energy",
-    role: "Electronic Engineer",
-    duration: "Dec 2024 – Jan 2026",
-    detail: "BMS firmware · STM32 CAN Bridge · ESP32 · EV automotive systems",
-  },
-  {
-    company: "KDU",
-    role: "Instructor",
-    duration: "Mar 2025 – May 2025",
-    detail: "KiCAD PCB courses · Mock technical interviews",
-  },
-  {
-    company: "Azend Technologies",
-    role: "[Associate] Embedded Engineer",
-    duration: "Jul 2024 – Jan 2025",
-    detail: "IoT sensors · Agritech · Firmware · PCB design",
-  },
-  {
-    company: "Azend Technologies",
-    role: "[Intern] Embedded Engineer",
-    duration: "Feb 2024 – Jul 2024",
-    detail: "ESP32 firmware · UART/I2C/RS485 · OpenWRT MIPS32 · KiCAD",
-  },
-  {
-    company: "Vega Innovations",
-    role: "[Intern] Embedded Engineer",
-    duration: "Oct 2022 – May 2023",
-    detail: "ESP32 IoT datalogger · MQTT · RS485 · CAN · BMS decryption",
-  },
-];
+const embeddedExperience = experienceData.filter((e) =>
+  e.domains?.includes("embedded")
+);
 
 export default function EmbeddedExperience() {
   const titleText = useTypewriter("Embedded Systems Engineer");
@@ -149,7 +121,18 @@ export default function EmbeddedExperience() {
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               {embeddedExperience.map((exp, i) => (
-                <ExperienceCard key={exp.company + exp.role} delay={2.2 + i * 0.1} {...exp} />
+                <ExperiencePreviewCard
+                  key={exp.slug}
+                  slug={exp.slug}
+                  company={exp.company}
+                  role={exp.position || ("positions" in exp ? exp.positions![0].title : "")}
+                  duration={exp.duration}
+                  detail={exp.location || ""}
+                  summary={exp.summary || ""}
+                  techStack={exp.techStack || []}
+                  variant="terminal"
+                  delay={2.2 + i * 0.1}
+                />
               ))}
             </div>
           </motion.div>
@@ -177,22 +160,6 @@ function ServiceCard({ delay, icon, title, description }: { delay: number, icon:
       <p className="text-gray-300 text-sm leading-relaxed border-t border-green-500/30 pt-4 mt-2">
         {description}
       </p>
-    </motion.div>
-  );
-}
-
-function ExperienceCard({ delay, company, role, duration, detail }: { delay: number, company: string, role: string, duration: string, detail: string }) {
-  return (
-    <motion.div
-      initial={{ opacity: 0, x: -16 }}
-      animate={{ opacity: 1, x: 0 }}
-      transition={{ duration: 0.3, delay }}
-      className="bg-gray-900/80 p-4 border border-green-500/40 hover:border-green-400 transition-all duration-150 flex flex-col gap-1"
-    >
-      <span className="text-xs text-green-400 tracking-widest uppercase">{duration}</span>
-      <h4 className="font-bold text-white tracking-wide">{company}</h4>
-      <p className="text-sm text-gray-200">{role}</p>
-      <p className="text-xs text-gray-400 mt-1 border-t border-green-500/20 pt-2">{detail}</p>
     </motion.div>
   );
 }

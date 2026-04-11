@@ -1,31 +1,61 @@
 export const experienceData = [
   {
     id: 1,
+    slug: "sitecore",
     company: "Sitecore",
     logo: "/logos/sitecore.png",
     position: "Cloud Infrastructure Engineer",
     type: "Full-time",
     duration: "Feb 2025 - Present · 1 yr 3 mos",
     location: "Sri Lanka · Remote",
+    summary: "Managing and scaling cloud infrastructure on Microsoft Azure using Terraform, Kubernetes, and modern IaC practices for a global digital experience platform.",
+    domains: ["cloud"] as ("cloud" | "embedded" | "business")[],
+    techStack: [
+      { name: "Terraform", logo: "https://cdn.simpleicons.org/terraform" },
+      { name: "Microsoft Azure", logo: "https://cdn.simpleicons.org/microsoftazure" },
+      { name: "Kubernetes", logo: "https://cdn.simpleicons.org/kubernetes" },
+      { name: "Docker", logo: "https://cdn.simpleicons.org/docker" },
+      { name: "Linux", logo: "https://cdn.simpleicons.org/linux" },
+    ],
+    projectImages: [] as string[],
     skills: ["Terraform", "Microsoft Azure", "+12 skills"]
   },
   {
     id: 2,
+    slug: "igt1-lanka",
     company: "IGT1 Lanka",
     logo: "/logos/igt1.png",
     position: "Cloud Infrastructure Engineer",
     type: "Full-time",
     duration: "Feb 2025 - Present · 1 yr 3 mos",
-    location: "Colombo, Western Province, Sri Lanka · Hybrid"
+    location: "Colombo, Western Province, Sri Lanka · Hybrid",
+    summary: "Building and maintaining hybrid cloud infrastructure, managing deployments, and ensuring high availability for enterprise systems.",
+    domains: ["cloud"] as ("cloud" | "embedded" | "business")[],
+    techStack: [
+      { name: "Microsoft Azure", logo: "https://cdn.simpleicons.org/microsoftazure" },
+      { name: "Kubernetes", logo: "https://cdn.simpleicons.org/kubernetes" },
+      { name: "Docker", logo: "https://cdn.simpleicons.org/docker" },
+      { name: "Linux", logo: "https://cdn.simpleicons.org/linux" },
+    ],
+    projectImages: [] as string[],
+    skills: ["Microsoft Azure", "Kubernetes", "+10 skills"]
   },
   {
     id: 3,
+    slug: "mirai-lk",
     company: "Mirai.lk",
     logo: "/logos/mirai.png",
     position: "Co-Founder",
     type: "Self-employed",
     duration: "Nov 2025 - Present · 6 mos",
     location: "Western Province, Sri Lanka",
+    summary: "Co-founded an electronics store serving makers, students, and engineers in Sri Lanka, with an online web store for sales and order management.",
+    domains: ["business"] as ("cloud" | "embedded" | "business")[],
+    techStack: [
+      { name: "Next.js", logo: "https://cdn.simpleicons.org/nextdotjs" },
+      { name: "Vercel", logo: "https://cdn.simpleicons.org/vercel" },
+    ],
+    projectImages: [] as string[],
     description: [
       "Co-founded Mirai.lk, an electronics store offering components and modules for makers, students, and engineers in Sri Lanka.",
       "Built and maintained the online web store for sales and order management."
@@ -34,12 +64,25 @@ export const experienceData = [
   },
   {
     id: 4,
+    slug: "renewaa-energy",
     company: "Renewaa Energy",
     logo: "/logos/renewaa.png",
     position: "Electronic Engineer",
     type: "Part-time",
     duration: "Dec 2024 - Jan 2026 · 1 yr 2 mos",
     location: "Ja-ela, Western Province, Sri Lanka · On-site",
+    summary: "Dual-role spanning embedded hardware engineering (BMS, CAN, EVs) and cloud DevOps (AWS, GitOps, CI/CD pipelines), cutting deployment times from hours to minutes.",
+    domains: ["cloud", "embedded"] as ("cloud" | "embedded" | "business")[],
+    techStack: [
+      { name: "C++", logo: "https://cdn.simpleicons.org/cplusplus" },
+      { name: "Espressif", logo: "https://cdn.simpleicons.org/espressif" },
+      { name: "STM32", logo: "https://cdn.simpleicons.org/stmicroelectronics" },
+      { name: "AWS", logo: "https://cdn.simpleicons.org/amazonaws" },
+      { name: "Docker", logo: "https://cdn.simpleicons.org/docker" },
+      { name: "GitHub Actions", logo: "https://cdn.simpleicons.org/githubactions" },
+      { name: "KiCAD", logo: "https://cdn.simpleicons.org/kicad" },
+    ],
+    projectImages: [] as string[],
     description: [
       "Engineered robust firmware for Battery Management System (BMS) dataloggers and automotive CAN bridges for Electric Vehicles (EVs).",
       "Programmed ESP32 and STM32 microcontrollers for diverse automotive applications, and contributed to hardware/software integration of an AI-powered autonomous vehicle project.",
@@ -54,11 +97,18 @@ export const experienceData = [
   },
   {
     id: 5,
+    slug: "kdu-instructor",
     company: "General Sir John Kotelawala Defence University",
     logo: "/logos/kdu.png",
     position: "Instructor",
     type: "Part-time",
     duration: "Mar 2025 - May 2025 · 3 mos",
+    summary: "Taught practical PCB design using KiCAD and conducted mock technical interviews for junior Electronics & Telecom Engineering undergraduates.",
+    domains: ["embedded", "business"] as ("cloud" | "embedded" | "business")[],
+    techStack: [
+      { name: "KiCAD", logo: "https://cdn.simpleicons.org/kicad" },
+    ],
+    projectImages: [] as string[],
     description: [
       "Conducted practical PCB design sessions for junior undergraduate students using KiCAD.",
       "Facilitated mock technical interviews for Intake 39 Electronics and Telecommunication Engineering students."
@@ -67,8 +117,26 @@ export const experienceData = [
   },
   {
     id: 6,
+    slug: "azend-technologies",
     company: "Azend Technologies",
     logo: "/logos/azend.png",
+    position: "Embedded → DevOps Engineer",
+    type: "Full-time",
+    duration: "Feb 2024 - Feb 2025 · 1 yr 1 mo",
+    location: "Colombo, Western Province, Sri Lanka · Hybrid",
+    summary: "Progressed from embedded systems intern to associate DevOps engineer — building IoT sensors, CI/CD pipelines, and containerized deployments on AWS.",
+    domains: ["cloud", "embedded", "business"] as ("cloud" | "embedded" | "business")[],
+    techStack: [
+      { name: "Terraform", logo: "https://cdn.simpleicons.org/terraform" },
+      { name: "Jenkins", logo: "https://cdn.simpleicons.org/jenkins" },
+      { name: "Docker", logo: "https://cdn.simpleicons.org/docker" },
+      { name: "AWS", logo: "https://cdn.simpleicons.org/amazonaws" },
+      { name: "Kubernetes", logo: "https://cdn.simpleicons.org/kubernetes" },
+      { name: "C++", logo: "https://cdn.simpleicons.org/cplusplus" },
+      { name: "GitHub Actions", logo: "https://cdn.simpleicons.org/githubactions" },
+      { name: "Espressif", logo: "https://cdn.simpleicons.org/espressif" },
+    ],
+    projectImages: [] as string[],
     positions: [
       {
         id: 61,
@@ -127,12 +195,21 @@ export const experienceData = [
   },
   {
     id: 7,
+    slug: "vega-innovations",
     company: "Vega Innovations",
     logo: "/logos/vega.png",
     position: "[Intern] Embedded Systems Engineer",
     type: "Internship",
     duration: "Oct 2022 - May 2023 · 8 mos",
     location: "Colombo, Western Province, Sri Lanka · On-site",
+    summary: "Developed ESP32-based IoT dataloggers with MQTT, OTA, RS485, and CAN for BMS data transmission. Reverse-engineered RS485 communication protocols.",
+    domains: ["embedded"] as ("cloud" | "embedded" | "business")[],
+    techStack: [
+      { name: "Espressif", logo: "https://cdn.simpleicons.org/espressif" },
+      { name: "C++", logo: "https://cdn.simpleicons.org/cplusplus" },
+      { name: "MQTT", logo: "https://cdn.simpleicons.org/mqtt" },
+    ],
+    projectImages: [] as string[],
     description: [
       "Developed an ESP32-based IoT datalogger using ESP-IDF 4.4 with MQTT, OTA, RTC, SPIFFS, RS485, and CAN for BMS data transmission.",
       "Decrypted RS485 communication for a specific BMS brand.",
@@ -142,12 +219,19 @@ export const experienceData = [
   },
   {
     id: 8,
+    slug: "sasip-institute",
     company: "SASIP Institute",
     logo: "/logos/sasip.png",
     position: "SAP Leader | Head of IT and Videography",
     type: "Full-time",
     duration: "Sep 2019 - Feb 2020 · 6 mos",
     location: "Nugegoda, Western Province, Sri Lanka",
+    summary: "Led IT operations and videography for an educational institute, managing 1000+ students daily, teaching physics practicals, and digitizing class recordings.",
+    domains: ["business"] as ("cloud" | "embedded" | "business")[],
+    techStack: [
+      { name: "Microsoft Excel", logo: "https://cdn.simpleicons.org/microsoftexcel" },
+    ],
+    projectImages: [] as string[],
     description: [
       "Organized recordings of each class session and digitally archived them.",
       "Proofread papers and designed all diagrams to Advanced Level standards.",
