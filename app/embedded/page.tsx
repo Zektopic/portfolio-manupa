@@ -45,11 +45,11 @@ export default function EmbeddedExperience() {
            initial={{ opacity: 0, x: -20 }}
            animate={{ opacity: 1, x: 0 }}
            transition={{ duration: 0.1, delay: 0.2 }}
-           className="absolute top-8 left-8 md:top-12 md:left-12"
+           className="fixed top-6 left-6 md:top-12 md:left-12 z-50"
         >
-          <Link href="/" className="inline-flex items-center gap-2 text-gray-300 hover:text-white hover:bg-green-400/20 transition-colors bg-gray-950/90 px-4 py-2 border border-green-500/50 uppercase tracking-widest text-sm backdrop-blur-md">
+          <Link href="/" className="inline-flex items-center gap-2 text-gray-300 hover:text-white hover:bg-green-400/20 transition-colors bg-gray-950/90 px-4 py-2 border border-green-500/50 uppercase tracking-widest text-sm backdrop-blur-md shadow-md hover:shadow-[0_0_15px_rgba(0,255,0,0.4)]">
             <ArrowLeft className="w-4 h-4" />
-            <span>[ Return ]</span>
+            <span className="hidden sm:inline">[ Return ]</span>
           </Link>
         </motion.div>
 
