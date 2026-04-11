@@ -69,7 +69,7 @@ export default function ProjectsShowcase() {
             </span>
           </h1>
           <p className="text-lg text-slate-500 mt-4 max-w-2xl">
-            {projectsData.length} projects spanning embedded systems, cloud
+            {projectsData.length} projects spanning Embedded Systems, Cloud
             infrastructure, IoT, DevOps, and more.
           </p>
         </motion.div>
