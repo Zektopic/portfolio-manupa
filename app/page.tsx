@@ -156,7 +156,9 @@ export default function LiquidGlassHero() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.3, duration: 1 }}
             >
-              Manupa <span className="font-semibold transition-colors duration-1000 block sm:inline" style={{ color: activeColor.primary }}>Wickramasinghe</span>
+              <Link href="/about-me" className="cursor-default no-underline text-inherit">
+                Manupa <span className="font-semibold transition-colors duration-1000 block sm:inline" style={{ color: activeColor.primary }}>Wickramasinghe</span>
+              </Link>
             </motion.h1>
             <motion.p
               className="text-lg md:text-2xl text-slate-600 max-w-2xl mx-auto font-light leading-relaxed mb-8"
