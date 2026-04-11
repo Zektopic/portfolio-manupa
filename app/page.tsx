@@ -4,7 +4,7 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import { ThemeProvider, createTheme } from "@mui/material/styles";
 import { IconButton, Popover, Box } from "@mui/material";
-import { Palette, Cloud, Cpu, Briefcase, Linkedin, Github, FileText, Link as LinkIcon } from "lucide-react";
+import { Palette, Cloud, Cpu, Briefcase, Linkedin, Github, FileText, Link as LinkIcon, LayoutGrid } from "lucide-react";
 import Link from "next/link";
 
 // Predefined color presets for the liquid glass UI
@@ -207,6 +207,34 @@ export default function LiquidGlassHero() {
               delay={1.0}
             />
           </div>
+
+          {/* Projects Showcase Button */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 1.2, type: "spring", bounce: 0.4 }}
+            className="mt-8 relative z-10"
+          >
+            <Link href="/projects" className="block outline-none group">
+              <motion.div
+                whileHover={{ y: -4, scale: 1.01 }}
+                whileTap={{ scale: 0.98 }}
+                className="flex items-center justify-center gap-3 p-5 rounded-2xl border border-white/50 bg-white/40 backdrop-blur-xl shadow-lg hover:shadow-2xl hover:bg-white/60 transition-all duration-300 relative overflow-hidden"
+              >
+                <div className="absolute inset-0 -translate-x-full group-hover:animate-[shimmer_2s_infinite] bg-gradient-to-r from-transparent via-white/70 to-transparent skew-x-12" />
+                <div
+                  className="w-10 h-10 rounded-xl flex items-center justify-center bg-white/80 border border-white/60 transition-colors duration-1000"
+                  style={{ color: activeColor.primary }}
+                >
+                  <LayoutGrid className="w-5 h-5" />
+                </div>
+                <div className="text-left">
+                  <h2 className="text-lg font-semibold text-slate-800">Project Showcase</h2>
+                  <p className="text-sm text-slate-600 font-medium">Browse all 27 projects</p>
+                </div>
+              </motion.div>
+            </Link>
+          </motion.div>
         </motion.div>
       </main>
     </ThemeProvider>
