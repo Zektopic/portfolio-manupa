@@ -4,33 +4,12 @@ import { motion } from "framer-motion";
 import BusinessScene from "@/components/BusinessScene";
 import { ArrowLeft, Target, TrendingUp, Users, Presentation, Briefcase } from "lucide-react";
 import Link from "next/link";
+import { experienceData } from "../data/experience";
+import { ExperiencePreviewCard } from "../components/experience-preview-card";
 
-const businessExperience = [
-  {
-    company: "Mirai.lk",
-    role: "Co-Founder",
-    duration: "Nov 2025 – Present",
-    detail: "Electronics store · Online web store · Product sourcing & sales",
-  },
-  {
-    company: "KDU",
-    role: "Instructor",
-    duration: "Mar 2025 – May 2025",
-    detail: "Mock technical interviews · PCB & electronics courses",
-  },
-  {
-    company: "Azend Technologies",
-    role: "[Intern] Business Development",
-    duration: "Feb 2024 – Jul 2024",
-    detail: "Investor presentations · BMICH Exhibition · SLASSCOM promotion",
-  },
-  {
-    company: "SASIP Institute",
-    role: "SAP Leader | Head of IT & Videography",
-    duration: "Sep 2019 – Feb 2020",
-    detail: "1000+ students · A/L physics teaching · Digital archiving · IT admin",
-  },
-];
+const businessExperience = experienceData.filter((e) =>
+  e.domains?.includes("business")
+);
 
 export default function BusinessExperience() {
   return (
@@ -117,7 +96,18 @@ export default function BusinessExperience() {
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               {businessExperience.map((exp, i) => (
-                <ExperienceCard key={exp.company + exp.role} delay={1.6 + i * 0.1} {...exp} />
+                <ExperiencePreviewCard
+                  key={exp.slug}
+                  slug={exp.slug}
+                  company={exp.company}
+                  role={exp.position || ("positions" in exp ? exp.positions![0].title : "")}
+                  duration={exp.duration}
+                  detail={exp.location || ""}
+                  summary={exp.summary || ""}
+                  techStack={exp.techStack || []}
+                  variant="corporate"
+                  delay={1.6 + i * 0.1}
+                />
               ))}
             </div>
           </motion.div>
@@ -141,22 +131,6 @@ function ServiceCard({ delay, icon, title, description }: { delay: number, icon:
       </div>
       <h3 className="text-xl font-medium text-slate-900">{title}</h3>
       <p className="text-slate-600 font-light leading-relaxed">{description}</p>
-    </motion.div>
-  );
-}
-
-function ExperienceCard({ delay, company, role, duration, detail }: { delay: number, company: string, role: string, duration: string, detail: string }) {
-  return (
-    <motion.div
-      initial={{ opacity: 0, y: 16 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.6, delay, ease: "easeOut" }}
-      className="bg-white/80 backdrop-blur-md p-5 rounded-2xl border border-slate-100 shadow-sm hover:shadow-md transition-all duration-300 flex flex-col gap-1"
-    >
-      <span className="text-xs font-semibold text-slate-500 uppercase tracking-wide">{duration}</span>
-      <h4 className="font-semibold text-slate-900">{company}</h4>
-      <p className="text-sm text-slate-700">{role}</p>
-      <p className="text-xs text-slate-500 mt-1">{detail}</p>
     </motion.div>
   );
 }
