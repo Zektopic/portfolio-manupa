@@ -2,16 +2,43 @@
 
 import { motion } from "framer-motion";
 import BusinessScene from "@/components/BusinessScene";
-import { ArrowLeft, Target, TrendingUp, Users, Presentation } from "lucide-react";
+import { ArrowLeft, Target, TrendingUp, Users, Presentation, Briefcase } from "lucide-react";
 import Link from "next/link";
+
+const businessExperience = [
+  {
+    company: "Mirai.lk",
+    role: "Co-Founder",
+    duration: "Nov 2025 – Present",
+    detail: "Electronics store · Online web store · Product sourcing & sales",
+  },
+  {
+    company: "KDU",
+    role: "Instructor",
+    duration: "Mar 2025 – May 2025",
+    detail: "Mock technical interviews · PCB & electronics courses",
+  },
+  {
+    company: "Azend Technologies",
+    role: "[Intern] Business Development",
+    duration: "Feb 2024 – Jul 2024",
+    detail: "Investor presentations · BMICH Exhibition · SLASSCOM promotion",
+  },
+  {
+    company: "SASIP Institute",
+    role: "SAP Leader | Head of IT & Videography",
+    duration: "Sep 2019 – Feb 2020",
+    detail: "1000+ students · A/L physics teaching · Digital archiving · IT admin",
+  },
+];
 
 export default function BusinessExperience() {
   return (
     <main className="relative min-h-screen w-full overflow-hidden text-slate-800">
       <BusinessScene />
-      
+
       <div className="relative z-10 flex flex-col items-center justify-start min-h-screen p-6 md:p-12 pt-24">
-        
+
         {/* Navigation back */}
         <motion.div
            initial={{ opacity: 0, x: -20 }}
@@ -29,10 +56,10 @@ export default function BusinessExperience() {
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.4, ease: [0.16, 1, 0.3, 1] }} 
+          transition={{ duration: 0.8, delay: 0.4, ease: [0.16, 1, 0.3, 1] }}
           className="w-full max-w-5xl mx-auto backdrop-blur-xl bg-white/70 p-8 md:p-16 rounded-[2rem] border border-white shadow-xl relative overflow-hidden"
         >
-          <motion.h1 
+          <motion.h1
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.6 }}
@@ -51,31 +78,49 @@ export default function BusinessExperience() {
           </motion.p>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
-            <ServiceCard 
-              delay={1.0} 
+            <ServiceCard
+              delay={1.0}
               icon={<Target className="w-6 h-6 text-slate-700" />}
               title="Strategic Planning"
               description="Aligning technical roadmaps with core business objectives to drive long-term value and competitive advantage."
             />
-            <ServiceCard 
-              delay={1.1} 
+            <ServiceCard
+              delay={1.1}
               icon={<Users className="w-6 h-6 text-slate-700" />}
               title="Team Leadership"
               description="Building, mentoring, and scaling high-performing cross-functional engineering and product teams."
             />
-            <ServiceCard 
-              delay={1.2} 
+            <ServiceCard
+              delay={1.2}
               icon={<TrendingUp className="w-6 h-6 text-slate-700" />}
               title="Agile Delivery"
               description="Implementing and optimizing agile methodologies (Scrum/Kanban) to accelerate product time-to-market."
             />
-            <ServiceCard 
-              delay={1.3} 
+            <ServiceCard
+              delay={1.3}
               icon={<Presentation className="w-6 h-6 text-slate-700" />}
               title="Stakeholder Management"
               description="Translating complex technical concepts into actionable insights for C-level executives and key stakeholders."
             />
           </div>
+
+          {/* Experience Section */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 1.5 }}
+            className="mt-16"
+          >
+            <h2 className="text-2xl font-semibold text-slate-900 mb-6 flex items-center gap-2">
+              <Briefcase className="w-6 h-6 text-slate-700" />
+              Professional Experience
+            </h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              {businessExperience.map((exp, i) => (
+                <ExperienceCard key={exp.company + exp.role} delay={1.6 + i * 0.1} {...exp} />
+              ))}
+            </div>
+          </motion.div>
         </motion.div>
       </div>
     </main>
@@ -96,6 +141,22 @@ function ServiceCard({ delay, icon, title, description }: { delay: number, icon:
       </div>
       <h3 className="text-xl font-medium text-slate-900">{title}</h3>
       <p className="text-slate-600 font-light leading-relaxed">{description}</p>
+    </motion.div>
+  );
+}
+
+function ExperienceCard({ delay, company, role, duration, detail }: { delay: number, company: string, role: string, duration: string, detail: string }) {
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 16 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.6, delay, ease: "easeOut" }}
+      className="bg-white/80 backdrop-blur-md p-5 rounded-2xl border border-slate-100 shadow-sm hover:shadow-md transition-all duration-300 flex flex-col gap-1"
+    >
+      <span className="text-xs font-semibold text-slate-500 uppercase tracking-wide">{duration}</span>
+      <h4 className="font-semibold text-slate-900">{company}</h4>
+      <p className="text-sm text-slate-700">{role}</p>
+      <p className="text-xs text-slate-500 mt-1">{detail}</p>
     </motion.div>
   );
 }

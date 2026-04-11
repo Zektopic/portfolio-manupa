@@ -2,16 +2,43 @@
 
 import { motion } from "framer-motion";
 import CloudScene from "@/components/CloudScene";
-import { ArrowLeft, CloudCog, Server, Shield, Database } from "lucide-react";
+import { ArrowLeft, CloudCog, Server, Shield, Database, Briefcase } from "lucide-react";
 import Link from "next/link";
+
+const cloudExperience = [
+  {
+    company: "Sitecore",
+    role: "Cloud Infrastructure Engineer",
+    duration: "Feb 2025 – Present",
+    detail: "Terraform, Microsoft Azure · Remote",
+  },
+  {
+    company: "IGT1 Lanka",
+    role: "Cloud Infrastructure Engineer",
+    duration: "Feb 2025 – Present",
+    detail: "Colombo · Hybrid",
+  },
+  {
+    company: "Azend Technologies",
+    role: "[Associate] DevOps Engineer",
+    duration: "Jan 2025 – Feb 2025",
+    detail: "Jenkins, EC2, EKS, Terraform · Reduced deployments to 20–30 min",
+  },
+  {
+    company: "Renewaa Energy",
+    role: "Cloud & DevOps (Electronic Engineer)",
+    duration: "Dec 2024 – Jan 2026",
+    detail: "AWS EC2, GitOps pipelines, Jules · Cut deploy time from 3 hrs to 10 min",
+  },
+];
 
 export default function CloudExperience() {
   return (
     <main className="relative min-h-screen w-full overflow-hidden text-slate-800">
       <CloudScene />
-      
+
       <div className="relative z-10 flex flex-col items-center justify-start min-h-screen p-6 md:p-12 pt-24">
-        
+
         {/* Navigation back */}
         <motion.div
            initial={{ opacity: 0, x: -20 }}
@@ -35,13 +62,13 @@ export default function CloudExperience() {
           {/* Subtle glowing orb effect behind the text */}
           <div className="absolute top-0 right-0 -mr-20 -mt-20 w-64 h-64 bg-sky-200/50 rounded-full blur-3xl pointer-events-none" />
 
-          <motion.h1 
+          <motion.h1
             initial={{ opacity: 0, filter: "blur(10px)" }}
             animate={{ opacity: 1, filter: "blur(0px)" }}
             transition={{ duration: 1.2, delay: 0.6 }}
             className="text-5xl md:text-7xl font-light tracking-tight text-slate-800 mb-6 text-center md:text-left"
           >
-            Cloud <span className="font-semibold bg-clip-text text-transparent bg-gradient-to-r from-sky-500 to-indigo-600">Architect</span>
+            Cloud <span className="font-semibold bg-clip-text text-transparent bg-gradient-to-r from-sky-500 to-indigo-600">Engineer</span>
           </motion.h1>
 
           <motion.p
@@ -54,31 +81,49 @@ export default function CloudExperience() {
           </motion.p>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
-            <ServiceCard 
-              delay={1.1} 
+            <ServiceCard
+              delay={1.1}
               icon={<Server className="w-6 h-6 text-sky-500" />}
               title="Infrastructure as Code"
               description="Automating cloud deployments using Terraform and CloudFormation to ensure reproducible and reliable environments."
             />
-            <ServiceCard 
-              delay={1.2} 
+            <ServiceCard
+              delay={1.2}
               icon={<Database className="w-6 h-6 text-indigo-500" />}
               title="Serverless Architecture"
               description="Designing cost-efficient, event-driven applications utilizing AWS Lambda, DynamoDB, and API Gateway."
             />
-            <ServiceCard 
-              delay={1.3} 
+            <ServiceCard
+              delay={1.3}
               icon={<Shield className="w-6 h-6 text-teal-500" />}
               title="Cloud Security"
               description="Implementing strict IAM policies, network security groups, and zero-trust architectures to protect cloud workloads."
             />
-            <ServiceCard 
-              delay={1.4} 
+            <ServiceCard
+              delay={1.4}
               icon={<CloudCog className="w-6 h-6 text-blue-500" />}
               title="Container Orchestration"
               description="Deploying and managing microservices using Docker, Kubernetes (EKS/AKS), and CI/CD pipelines."
             />
           </div>
+
+          {/* Experience Section */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 1.6 }}
+            className="mt-16"
+          >
+            <h2 className="text-2xl font-semibold text-slate-800 mb-6 flex items-center gap-2">
+              <Briefcase className="w-6 h-6 text-sky-500" />
+              Professional Experience
+            </h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              {cloudExperience.map((exp, i) => (
+                <ExperienceCard key={exp.company + exp.role} delay={1.7 + i * 0.1} {...exp} />
+              ))}
+            </div>
+          </motion.div>
         </motion.div>
       </div>
     </main>
@@ -99,6 +144,22 @@ function ServiceCard({ delay, icon, title, description }: { delay: number, icon:
       </div>
       <h3 className="text-xl font-medium text-slate-800">{title}</h3>
       <p className="text-slate-600 font-light leading-relaxed">{description}</p>
+    </motion.div>
+  );
+}
+
+function ExperienceCard({ delay, company, role, duration, detail }: { delay: number, company: string, role: string, duration: string, detail: string }) {
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 16 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.6, delay }}
+      className="bg-white/40 backdrop-blur-md p-5 rounded-2xl border border-white/50 shadow-sm flex flex-col gap-1"
+    >
+      <span className="text-xs font-semibold text-sky-600 uppercase tracking-wide">{duration}</span>
+      <h4 className="font-semibold text-slate-800">{company}</h4>
+      <p className="text-sm text-slate-700">{role}</p>
+      <p className="text-xs text-slate-500 mt-1">{detail}</p>
     </motion.div>
   );
 }
