@@ -65,7 +65,7 @@ export default function LiquidGlassHero() {
         />
 
         {/* Theme Picker (Material UI) */}
-        <Box className="absolute top-8 right-8 z-50">
+        <Box className="fixed top-6 right-6 md:top-8 md:right-8 z-50">
           <IconButton
             aria-describedby={id}
             onClick={handleClick}
@@ -112,7 +112,7 @@ export default function LiquidGlassHero() {
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, type: "spring", bounce: 0.4 }}
-          className="relative z-10 w-full max-w-5xl p-10 md:p-20 rounded-[3rem] border border-white/60 overflow-hidden"
+          className="relative z-10 w-full max-w-5xl p-6 sm:p-10 md:p-20 mt-16 md:mt-0 rounded-[2rem] md:rounded-[3rem] border border-white/60 overflow-hidden"
           style={{
             background: "linear-gradient(135deg, rgba(255, 255, 255, 0.6) 0%, rgba(255, 255, 255, 0.2) 100%)",
             backdropFilter: "blur(30px)",
@@ -151,12 +151,14 @@ export default function LiquidGlassHero() {
             </motion.div>
 
             <motion.h1
-              className="text-5xl md:text-7xl font-light tracking-tight text-slate-800"
+              className="text-4xl sm:text-5xl md:text-7xl font-light tracking-tight text-slate-800 break-words max-w-full text-center"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.3, duration: 1 }}
             >
-              Manupa <span className="font-semibold transition-colors duration-1000" style={{ color: activeColor.primary }}>Wickramasinghe</span>
+              <Link href="/about-me" className="cursor-default no-underline text-inherit">
+                Manupa <span className="font-semibold transition-colors duration-1000 block sm:inline" style={{ color: activeColor.primary }}>Wickramasinghe</span>
+              </Link>
             </motion.h1>
             <motion.p
               className="text-lg md:text-2xl text-slate-600 max-w-2xl mx-auto font-light leading-relaxed mb-8"

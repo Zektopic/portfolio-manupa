@@ -3,7 +3,7 @@ export const experienceData = [
     id: 1,
     slug: "sitecore",
     company: "Sitecore",
-    logo: "/logos/sitecore.png",
+    logo: "/logos/sitecore.svg",
     position: "Cloud Infrastructure Engineer",
     type: "Full-time",
     duration: "Feb 2025 - Present · 1 yr 3 mos",
@@ -17,14 +17,18 @@ export const experienceData = [
       { name: "Docker", logo: "https://cdn.simpleicons.org/docker" },
       { name: "Linux", logo: "https://cdn.simpleicons.org/linux" },
     ],
-    projectImages: [] as string[],
+    projectImages: [
+      "/images/experience/sitecore-1.svg",
+      "/images/experience/sitecore-2.svg",
+      "/images/experience/sitecore-3.svg",
+    ],
     skills: ["Terraform", "Microsoft Azure", "+12 skills"]
   },
   {
     id: 2,
     slug: "igt1-lanka",
     company: "IGT1 Lanka",
-    logo: "/logos/igt1.png",
+    logo: "/logos/igt1.svg",
     position: "Cloud Infrastructure Engineer",
     type: "Full-time",
     duration: "Feb 2025 - Present · 1 yr 3 mos",
@@ -37,14 +41,18 @@ export const experienceData = [
       { name: "Docker", logo: "https://cdn.simpleicons.org/docker" },
       { name: "Linux", logo: "https://cdn.simpleicons.org/linux" },
     ],
-    projectImages: [] as string[],
+    projectImages: [
+      "/images/experience/igt1-lanka-1.svg",
+      "/images/experience/igt1-lanka-2.svg",
+      "/images/experience/igt1-lanka-3.svg",
+    ],
     skills: ["Microsoft Azure", "Kubernetes", "+10 skills"]
   },
   {
     id: 3,
     slug: "mirai-lk",
     company: "Mirai.lk",
-    logo: "/logos/mirai.png",
+    logo: "/logos/mirai.svg",
     position: "Co-Founder",
     type: "Self-employed",
     duration: "Nov 2025 - Present · 6 mos",
@@ -55,7 +63,11 @@ export const experienceData = [
       { name: "Next.js", logo: "https://cdn.simpleicons.org/nextdotjs" },
       { name: "Vercel", logo: "https://cdn.simpleicons.org/vercel" },
     ],
-    projectImages: [] as string[],
+    projectImages: [
+      "/images/experience/mirai-lk-1.svg",
+      "/images/experience/mirai-lk-2.svg",
+      "/images/experience/mirai-lk-3.svg",
+    ],
     description: [
       "Co-founded Mirai.lk, an electronics store offering components and modules for makers, students, and engineers in Sri Lanka.",
       "Built and maintained the online web store for sales and order management."
@@ -66,7 +78,7 @@ export const experienceData = [
     id: 4,
     slug: "renewaa-energy",
     company: "Renewaa Energy",
-    logo: "/logos/renewaa.png",
+    logo: "/logos/renewaa.svg",
     position: "Electronic Engineer",
     type: "Part-time",
     duration: "Dec 2024 - Jan 2026 · 1 yr 2 mos",
@@ -82,7 +94,11 @@ export const experienceData = [
       { name: "GitHub Actions", logo: "https://cdn.simpleicons.org/githubactions" },
       { name: "KiCAD", logo: "https://cdn.simpleicons.org/kicad" },
     ],
-    projectImages: [] as string[],
+    projectImages: [
+      "/images/experience/renewaa-energy-1.svg",
+      "/images/experience/renewaa-energy-2.svg",
+      "/images/experience/renewaa-energy-3.svg",
+    ],
     description: [
       "Engineered robust firmware for Battery Management System (BMS) dataloggers and automotive CAN bridges for Electric Vehicles (EVs).",
       "Programmed ESP32 and STM32 microcontrollers for diverse automotive applications, and contributed to hardware/software integration of an AI-powered autonomous vehicle project.",
@@ -99,7 +115,7 @@ export const experienceData = [
     id: 5,
     slug: "kdu-instructor",
     company: "General Sir John Kotelawala Defence University",
-    logo: "/logos/kdu.png",
+    logo: "/logos/kdu.svg",
     position: "Instructor",
     type: "Part-time",
     duration: "Mar 2025 - May 2025 · 3 mos",
@@ -108,7 +124,11 @@ export const experienceData = [
     techStack: [
       { name: "KiCAD", logo: "https://cdn.simpleicons.org/kicad" },
     ],
-    projectImages: [] as string[],
+    projectImages: [
+      "/images/experience/kdu-instructor-1.svg",
+      "/images/experience/kdu-instructor-2.svg",
+      "/images/experience/kdu-instructor-3.svg",
+    ],
     description: [
       "Conducted practical PCB design sessions for junior undergraduate students using KiCAD.",
       "Facilitated mock technical interviews for Intake 39 Electronics and Telecommunication Engineering students."
@@ -119,7 +139,7 @@ export const experienceData = [
     id: 6,
     slug: "azend-technologies",
     company: "Azend Technologies",
-    logo: "/logos/azend.png",
+    logo: "/logos/azend.svg",
     position: "Embedded → DevOps Engineer",
     type: "Full-time",
     duration: "Feb 2024 - Feb 2025 · 1 yr 1 mo",
@@ -136,7 +156,11 @@ export const experienceData = [
       { name: "GitHub Actions", logo: "https://cdn.simpleicons.org/githubactions" },
       { name: "Espressif", logo: "https://cdn.simpleicons.org/espressif" },
     ],
-    projectImages: [] as string[],
+    projectImages: [
+      "/images/experience/azend-technologies-1.svg",
+      "/images/experience/azend-technologies-2.svg",
+      "/images/experience/azend-technologies-3.svg",
+    ],
     positions: [
       {
         id: 61,
@@ -197,7 +221,7 @@ export const experienceData = [
     id: 7,
     slug: "vega-innovations",
     company: "Vega Innovations",
-    logo: "/logos/vega.png",
+    logo: "/logos/vega.svg",
     position: "[Intern] Embedded Systems Engineer",
     type: "Internship",
     duration: "Oct 2022 - May 2023 · 8 mos",
@@ -209,7 +233,11 @@ export const experienceData = [
       { name: "C++", logo: "https://cdn.simpleicons.org/cplusplus" },
       { name: "MQTT", logo: "https://cdn.simpleicons.org/mqtt" },
     ],
-    projectImages: [] as string[],
+    projectImages: [
+      "/images/experience/vega-innovations-1.svg",
+      "/images/experience/vega-innovations-2.svg",
+      "/images/experience/vega-innovations-3.svg",
+    ],
     description: [
       "Developed an ESP32-based IoT datalogger using ESP-IDF 4.4 with MQTT, OTA, RTC, SPIFFS, RS485, and CAN for BMS data transmission.",
       "Decrypted RS485 communication for a specific BMS brand.",
@@ -221,7 +249,7 @@ export const experienceData = [
     id: 8,
     slug: "sasip-institute",
     company: "SASIP Institute",
-    logo: "/logos/sasip.png",
+    logo: "/logos/sasip.svg",
     position: "SAP Leader | Head of IT and Videography",
     type: "Full-time",
     duration: "Sep 2019 - Feb 2020 · 6 mos",
@@ -231,7 +259,11 @@ export const experienceData = [
     techStack: [
       { name: "Microsoft Excel", logo: "https://cdn.simpleicons.org/microsoftexcel" },
     ],
-    projectImages: [] as string[],
+    projectImages: [
+      "/images/experience/sasip-institute-1.svg",
+      "/images/experience/sasip-institute-2.svg",
+      "/images/experience/sasip-institute-3.svg",
+    ],
     description: [
       "Organized recordings of each class session and digitally archived them.",
       "Proofread papers and designed all diagrams to Advanced Level standards.",

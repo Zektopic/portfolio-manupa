@@ -23,11 +23,11 @@ export default function BusinessExperience() {
            initial={{ opacity: 0, x: -20 }}
            animate={{ opacity: 1, x: 0 }}
            transition={{ duration: 0.8, delay: 0.2 }}
-           className="absolute top-8 left-8 md:top-12 md:left-12"
+           className="fixed top-6 left-6 md:top-12 md:left-12 z-50"
         >
-          <Link href="/" className="inline-flex items-center gap-2 text-slate-600 hover:text-slate-900 transition-colors backdrop-blur-md bg-white/60 px-5 py-2.5 rounded-full border border-slate-200 shadow-sm hover:shadow font-medium">
+          <Link href="/" className="inline-flex items-center gap-2 text-slate-600 hover:text-slate-900 transition-colors backdrop-blur-md bg-white/70 px-4 md:px-5 py-2 md:py-2.5 rounded-full border border-slate-200 shadow-md hover:shadow-lg font-medium">
             <ArrowLeft className="w-5 h-5" />
-            <span>Back</span>
+            <span className="hidden sm:inline">Back</span>
           </Link>
         </motion.div>
 
