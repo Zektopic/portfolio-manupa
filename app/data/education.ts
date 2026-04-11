@@ -24,8 +24,33 @@ export const educationData = [
       "LEO Club - Member",
       "Rotaract - Member",
       "Toastmasters - Member",
-      "ERIC - Member"
+      "ERIC - Member",
+      "IEEE ComSoc KDU - Webmaster (Executive Board)"
     ],
+    note: "Successfully graduated as an Electronics Engineer. Awarded a 50% scholarship for excellent A/L performance.",
     skills: ["Python (Programming Language)", "Electronic Engineering", "+11 skills"]
+  },
+  {
+    institution: "Nalanda College Colombo",
+    logo: "/logos/nalanda.png",
+    degree: "GCE Advanced Level — Physical Sciences",
+    duration: "2019",
+    activities: [
+      "MoraNalanda",
+      "Science Society",
+      "Chemistry Society",
+      "Buddhist Society"
+    ],
+    results: "Physics: A | Combined Mathematics: A | Chemistry: B | General English: A",
+    skills: ["Physics", "Mathematics", "Chemistry"]
+  },
+  {
+    institution: "Royal Institute Campus",
+    logo: "/logos/royal.png",
+    degree: "GCE Ordinary Level",
+    duration: "O/L",
+    activities: ["Chess Society"],
+    results: "9A",
+    skills: ["Mathematics", "Science", "English"]
   }
 ];

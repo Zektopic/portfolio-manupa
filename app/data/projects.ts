@@ -5,19 +5,192 @@ export const projectsData: {
   description: string;
   skills: string[];
   images?: string[];
+  link?: string;
 }[] = [
   {
+    title: "Android CCTV App",
+    duration: "Jan 2026 - Feb 2026",
+    description: "Designed an Android application in Kotlin that transforms an Android device into an IP-based CCTV camera by exposing an RTSP stream. Supports background service execution, configurable video codec selection (H.264, H.265/HEVC, AV1, VP9), and an embedded web server for secure remote access.",
+    skills: ["Kotlin", "Android", "RTSP", "Networking"],
+    link: "https://github.com/Zektopic/RSTP-CCTV-App"
+  },
+  {
     title: "Solar + SuperCap IOT sensors",
-    duration: "May 2025 - Present",
-    description: "Design and implement Agrisensors/Industrial sensors that work in intense environment conditions with Solar power. Uses deep sleep.",
-    skills: ["C (Programming Language)", "ESP32 Microcontrollers", "+5 skills"]
+    duration: "May 2025 - Sep 2025",
+    description: "Design and implement Agrisensors/Industrial sensors that work in intense environment conditions with Solar power. Uses deep sleep for ultra-low power operation. Open-source project sponsored by VolfPack Energy.",
+    skills: ["C (Programming Language)", "ESP32 Microcontrollers", "KiCAD", "Solar Power", "IoT"]
+  },
+  {
+    title: "Li-Ion BMS",
+    duration: "Jan 2025 - Aug 2025",
+    associatedWith: "Renewaa Energy",
+    description: "Design and develop the hardware and firmware for a microcontroller-based Battery Management System (BMS) for lithium-ion battery packs used in electric vehicles.",
+    skills: ["STM32", "Electronic Engineering", "KiCAD", "Firmware"]
+  },
+  {
+    title: "STM32 CAN Bridge",
+    duration: "Mar 2025 - May 2025",
+    associatedWith: "Renewaa Energy",
+    description: "Designed a CAN bridge to mask and translate CAN messages from automotive components (BMS, Headunit, Odometer). Includes JTAG-based firmware flashing and dumping using OPENOCD and STlink.",
+    skills: ["STM32", "KiCAD", "OpenOCD", "CAN Bus", "Automotive"],
+    link: "https://github.com/Zektopic"
   },
   {
     title: "DevOps Architecture",
-    duration: "Dec 2024 - Present",
+    duration: "Dec 2024 - Jan 2026",
     associatedWith: "Renewaa Energy",
-    description: "Creating and Developing highly automated CI/CD pipelines and tests for all software and embedded programmes within our GitHub organisation",
-    skills: ["DevOps", "Amazon Web Services (AWS)", "+18 skills"]
+    description: "Creating and developing highly automated CI/CD pipelines and tests for all software and embedded programmes within our GitHub organisation. Deploy web apps and services using pipelines to GoDaddy, EC2 instances, building Docker images for K8s expansion, and automated testing pipelines. Cut development and deployment times from days to minutes.",
+    skills: ["DevOps", "Amazon Web Services (AWS)", "Docker", "GitHub Actions", "Terraform", "Vercel"]
+  },
+  {
+    title: "Wifi Roller Gate Controller",
+    duration: "Mar 2025",
+    description: "Designed and built a WiFi-enabled roller gate controller using ESP32, enabling remote operation via a web UI. Includes prototype hardware and custom firmware.",
+    skills: ["Arduino", "ESP32 Microcontrollers", "WiFi", "Embedded C", "KiCAD"]
+  },
+  {
+    title: "Variable Power Supply",
+    duration: "Oct 2024 - Jan 2025",
+    description: "Designed a variable power supply with a 0–48V range at up to 6A, plus fixed power terminals at 12V, 5V and 3.3V (up to 3A) using off-the-shelf components.",
+    skills: ["Electronic Engineering", "KiCAD", "PCB Design"]
+  },
+  {
+    title: "Govi.Ai Containerization and Clustering",
+    duration: "Oct 2024 - Dec 2024",
+    associatedWith: "Azend Technologies",
+    description: "Deploying the Govi.ai application on AWS EKS. Managed containerized instances in GitHub Registry and AWS ECR, testing product deployment feasibility on EKS and Kubernetes clusters.",
+    skills: ["Containerization", "DevOps", "Amazon Web Services (AWS)", "Kubernetes", "EKS"]
+  },
+  {
+    title: "Govi.ai Web App Deployment Pipeline",
+    duration: "Aug 2024 - Nov 2024",
+    associatedWith: "Azend Technologies",
+    description: "Pipeline handling the deployment of the Govi.ai Admin and Auth Web Apps on EC2 instances. Automates environment setup, application deployment, and health monitoring on EC2.",
+    skills: ["DevOps", "Amazon Web Services (AWS)", "Jenkins", "Node.js"],
+    link: "https://github.com/Zektopic"
+  },
+  {
+    title: "Terraform EC2 Deployment Pipeline",
+    duration: "Aug 2024 - Nov 2024",
+    associatedWith: "Azend Technologies",
+    description: "Automates deployment of EC2 instances using Terraform. Includes configuration of Elastic IPs, boot volumes, and URL setup on Route 53.",
+    skills: ["Jenkins", "DevOps", "Terraform", "Amazon Web Services (AWS)"],
+    link: "https://github.com/Zektopic"
+  },
+  {
+    title: "IOT Sensors - Govi.ai",
+    duration: "Feb 2024 - Jul 2024",
+    associatedWith: "Azend Technologies",
+    description: "Designed and developed IoT sensors for detecting Methane, CO2 levels, and power monitoring. Custom PCB design and firmware for field deployment.",
+    skills: ["Electronics", "C (Programming Language)", "KiCAD", "ESP32", "IoT"]
+  },
+  {
+    title: "IOT Power Monitor",
+    duration: "May 2024 - Jul 2024",
+    description: "ESP8266-based IoT energy meter using HLW8012 for real-time power monitoring. Custom PCB designed in KiCAD.",
+    skills: ["KiCAD", "Electronics", "ESP8266", "IoT", "Energy Monitoring"],
+    link: "https://github.com/ManupaKDU/ESP8266-HLW8012-Simple-Switch-"
+  },
+  {
+    title: "Modbus Shield - ESP8266",
+    duration: "May 2024 - Jun 2024",
+    description: "Open-source RS485/Modbus shield for NodeMCU Amica. Designed for capturing RS485 data from BMS, inverters, and other industrial applications.",
+    skills: ["KiCAD", "Electronics", "RS485", "Modbus", "ESP8266"],
+    link: "https://github.com/ManupaKDU/ESP8266-RS485-Shield"
+  },
+  {
+    title: "Universal Datalogger",
+    duration: "Jul 2023 - Dec 2025",
+    description: "Ongoing project to develop a universal datalogger that receives data over RS485, RS232, and CAN, safely uploads to the cloud, and stores locally on SD card. ESP32-S3 based with OLED display.",
+    skills: ["KiCAD", "Electronics", "ESP32", "RS485", "CAN Bus"],
+    link: "https://github.com/manupawickramasinghe/ESP32S3-mini-DATALOGGER"
+  },
+  {
+    title: "Edge Computing using FPGA with Neural Networks",
+    duration: "Feb 2023 - Feb 2024",
+    associatedWith: "General Sir John Kotelawala Defence University",
+    description: "Implemented an edge computing device using Kria KV260 FPGAs with deployed neural networks for general-purpose applications (object recognition, speech recognition, NLP). Optimized for low power, high performance, and low latency.",
+    skills: ["C++", "Field-Programmable Gate Arrays (FPGA)", "Machine Learning", "Vitis AI", "Computer Vision"]
+  },
+  {
+    title: "KDU TRANSMISSION",
+    duration: "Jul 2022 - Apr 2024",
+    associatedWith: "General Sir John Kotelawala Defence University",
+    description: "Official e-magazine and blog for IEEE ComSoc KDU. Maintained and modified the website using HTML, CSS, and JavaScript.",
+    skills: ["Web Development", "HTML", "CSS", "JavaScript"]
+  },
+  {
+    title: "ESP32S3 Devkit",
+    duration: "Jul 2023 - Jan 2024",
+    associatedWith: "General Sir John Kotelawala Defence University",
+    description: "ESP32-S3 MINI Devkit designed in KiCAD. Compatible with Mini, Micro, and USB-C ports. Intended as a foundation for a global datalogger platform.",
+    skills: ["KiCAD", "Electronics", "PCB Design", "ESP32"],
+    link: "https://github.com/manupawickramasinghe/ESP32S3-DEVKIT-MINI"
+  },
+  {
+    title: "IOT BMS Datalogger",
+    duration: "Oct 2022 - Apr 2023",
+    associatedWith: "Vega Innovations",
+    description: "Developed an ESP32-based IoT datalogger using ESP-IDF 4.4 with MQTT, OTA updates, RTC, SPIFFS, RS485, and CAN for BMS data transmission. Reverse-engineered RS485 communication for a specific BMS brand.",
+    skills: ["ESP32 Microcontrollers", "Electronic Engineering", "C++", "MQTT", "RS485"]
+  },
+  {
+    title: "EduMora Android App",
+    duration: "Jun 2022 - Mar 2023",
+    associatedWith: "University of Moratuwa",
+    description: "Developed an Android app using Flutter as part of the 2nd year Software Project (Team Hackstone). Companion app for the web-based Hasthiya LMS site, featuring quiz pages, course navigation, and interactive UI.",
+    skills: ["Flutter", "Dart", "Android", "Git"],
+    link: "https://github.com/manupawickramasinghe/LMS-Hasthiya-IT-Team-Hackstone"
+  },
+  {
+    title: "WEB: GENESIZ",
+    duration: "Aug 2022 - Dec 2022",
+    associatedWith: "General Sir John Kotelawala Defence University",
+    description: "Designed the official web page for the Genesiz event held by the ERIC society of KDU.",
+    skills: ["Web Development", "HTML", "CSS", "JavaScript"]
+  },
+  {
+    title: "Futuristic Smart Study Table",
+    duration: "Aug 2021 - Jun 2022",
+    associatedWith: "University of Moratuwa",
+    description: "1st Year ICT project — a smart study table to maximize student comfort. Features automated lighting, fan control, and alerts using ATMEGA32 microcontroller. Designed in Proteus, KiCAD, and AtmelStudio.",
+    skills: ["Microcontrollers", "C (Programming Language)", "KiCAD", "Proteus", "ATMEGA32"]
+  },
+  {
+    title: "Bluetooth Switch Converter",
+    duration: "Feb 2022 - May 2022",
+    associatedWith: "General Sir John Kotelawala Defence University",
+    description: "Commercial project to convert existing light switches to Bluetooth-controllable switches for special-abled users, without rewiring. Built with Arduino Nano, designed in EasyEDA and modeled in SOLIDWORKS.",
+    skills: ["C++", "Arduino", "Bluetooth", "EasyEDA", "SOLIDWORKS"]
+  },
+  {
+    title: "SLIR Robotics Projects",
+    duration: "Oct 2021 - Mar 2022",
+    description: "Advanced robotics course projects including an obstacle-avoiding robot, water control system, mini goods transporter (conveyor + pneumatics), elevator control system, and home automation system.",
+    skills: ["Electronic Engineering", "Git", "Arduino", "C Programming"],
+    link: "https://github.com/manupawickramasinghe/SLIRCODE_Final"
+  },
+  {
+    title: "LPSherlock - Gas Leakage Detector",
+    duration: "Nov 2021 - Feb 2022",
+    associatedWith: "General Sir John Kotelawala Defence University",
+    description: "Individual design project — a liquid petroleum gas leakage detector that automates a gas removal system when leakage is detected. Uses MQ-2 gas sensor with Arduino UNO.",
+    skills: ["Arduino", "Electronic Engineering", "Proteus", "KiCAD", "C Programming"]
+  },
+  {
+    title: "RuView Human Sensing System",
+    description: "WiFi-based real-time pose estimation system. ESP32-S3 firmware, containerized Rust sensing server, and Kubernetes deployment for scalable inference.",
+    skills: ["ESP32", "Rust", "Kubernetes", "Computer Vision", "WiFi"]
+  },
+  {
+    title: "Energy Meter Dataloggers (ESP32S3)",
+    description: "ESP32S3-based energy meter datalogger supporting RS485, WiFi, Ethernet, LoRa, and 4G connectivity. Built using ESP-IDF framework for robust field deployment.",
+    skills: ["ESP32", "ESP-IDF", "RS485", "LoRa", "4G", "C Programming"]
+  },
+  {
+    title: "Eye-Tracking Communication Software",
+    description: "Assistive technology software for eye-tracking-based communication, featuring calibration UI, AI-driven predictive text models, and accessible interface design.",
+    skills: ["Python", "Computer Vision", "AI/ML", "Accessibility", "UI Design"]
   }
 ];
 

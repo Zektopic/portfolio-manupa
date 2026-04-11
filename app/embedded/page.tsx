@@ -26,15 +26,48 @@ function useTypewriter(text: string, speed: number = 30) {
   return displayedText;
 }
 
+const embeddedExperience = [
+  {
+    company: "Renewaa Energy",
+    role: "Electronic Engineer",
+    duration: "Dec 2024 – Jan 2026",
+    detail: "BMS firmware · STM32 CAN Bridge · ESP32 · EV automotive systems",
+  },
+  {
+    company: "KDU",
+    role: "Instructor",
+    duration: "Mar 2025 – May 2025",
+    detail: "KiCAD PCB courses · Mock technical interviews",
+  },
+  {
+    company: "Azend Technologies",
+    role: "[Associate] Embedded Engineer",
+    duration: "Jul 2024 – Jan 2025",
+    detail: "IoT sensors · Agritech · Firmware · PCB design",
+  },
+  {
+    company: "Azend Technologies",
+    role: "[Intern] Embedded Engineer",
+    duration: "Feb 2024 – Jul 2024",
+    detail: "ESP32 firmware · UART/I2C/RS485 · OpenWRT MIPS32 · KiCAD",
+  },
+  {
+    company: "Vega Innovations",
+    role: "[Intern] Embedded Engineer",
+    duration: "Oct 2022 – May 2023",
+    detail: "ESP32 IoT datalogger · MQTT · RS485 · CAN · BMS decryption",
+  },
+];
+
 export default function EmbeddedExperience() {
   const titleText = useTypewriter("Embedded Systems Engineer");
 
   return (
     <main className="relative min-h-screen w-full overflow-hidden text-gray-300 font-mono">
       <EmbeddedScene />
-      
+
       <div className="relative z-10 flex flex-col items-center justify-start min-h-screen p-6 md:p-12 pt-24">
-        
+
         {/* Navigation back */}
         <motion.div
            initial={{ opacity: 0, x: -20 }}
@@ -77,31 +110,49 @@ export default function EmbeddedExperience() {
           </motion.p>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
-            <ServiceCard 
-              delay={1.6} 
+            <ServiceCard
+              delay={1.6}
               icon={<Cpu className="w-6 h-6 text-gray-300" />}
               title="Microcontroller Architecture"
               description="Programming ARM Cortex, ESP32, and AVR based systems utilizing RTOS for deterministic task execution."
             />
-            <ServiceCard 
-              delay={1.7} 
+            <ServiceCard
+              delay={1.7}
               icon={<Terminal className="w-6 h-6 text-gray-300" />}
               title="Low-Level Firmware"
               description="Writing highly optimized C/C++ and Rust to interface with sensors, actuators, and memory management units."
             />
-            <ServiceCard 
-              delay={1.8} 
+            <ServiceCard
+              delay={1.8}
               icon={<Wifi className="w-6 h-6 text-gray-300" />}
               title="IoT Connectivity"
               description="Implementing MQTT, CoAP, and BLE stacks for secure, low-power device communication to cloud endpoints."
             />
-            <ServiceCard 
-              delay={1.9} 
+            <ServiceCard
+              delay={1.9}
               icon={<Power className="w-6 h-6 text-gray-300" />}
               title="Hardware Bring-up"
               description="Debugging schematics and PCBs using oscilloscopes, logic analyzers, and reading datasheets."
             />
           </div>
+
+          {/* Experience Section */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.4, delay: 2.1 }}
+            className="mt-16"
+          >
+            <div className="text-green-400 text-xs tracking-widest uppercase mb-4 flex items-center gap-2">
+              <span className="w-2 h-2 bg-green-400" />
+              // Professional Experience
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              {embeddedExperience.map((exp, i) => (
+                <ExperienceCard key={exp.company + exp.role} delay={2.2 + i * 0.1} {...exp} />
+              ))}
+            </div>
+          </motion.div>
         </motion.div>
       </div>
     </main>
@@ -126,6 +177,22 @@ function ServiceCard({ delay, icon, title, description }: { delay: number, icon:
       <p className="text-gray-300 text-sm leading-relaxed border-t border-green-500/30 pt-4 mt-2">
         {description}
       </p>
+    </motion.div>
+  );
+}
+
+function ExperienceCard({ delay, company, role, duration, detail }: { delay: number, company: string, role: string, duration: string, detail: string }) {
+  return (
+    <motion.div
+      initial={{ opacity: 0, x: -16 }}
+      animate={{ opacity: 1, x: 0 }}
+      transition={{ duration: 0.3, delay }}
+      className="bg-gray-900/80 p-4 border border-green-500/40 hover:border-green-400 transition-all duration-150 flex flex-col gap-1"
+    >
+      <span className="text-xs text-green-400 tracking-widest uppercase">{duration}</span>
+      <h4 className="font-bold text-white tracking-wide">{company}</h4>
+      <p className="text-sm text-gray-200">{role}</p>
+      <p className="text-xs text-gray-400 mt-1 border-t border-green-500/20 pt-2">{detail}</p>
     </motion.div>
   );
 }

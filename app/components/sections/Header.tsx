@@ -25,7 +25,7 @@ export const Header = () => {
           <ThemeToggle />
         </div>
         <Avatar className="w-40 h-40">
-          <AvatarImage src="/profile-image.jpg" alt={profileData.name} />
+          <AvatarImage src="/profile-pic.jpg" alt={profileData.name} />
           <AvatarFallback className="text-5xl font-bold">
             {initials}
           </AvatarFallback>
