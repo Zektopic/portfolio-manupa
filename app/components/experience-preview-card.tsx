@@ -10,6 +10,7 @@ type Variant = "glass" | "terminal" | "corporate";
 interface ExperiencePreviewCardProps {
   slug: string;
   company: string;
+  logo?: string;
   role: string;
   duration: string;
   detail: string;
@@ -30,6 +31,7 @@ const variantStyles: Record<Variant, {
   techLabel: string;
   link: string;
   chevron: string;
+  logoBg: string;
 }> = {
   glass: {
     card: "bg-white/40 backdrop-blur-md rounded-2xl border border-white/50 shadow-sm hover:shadow-md",
@@ -42,6 +44,7 @@ const variantStyles: Record<Variant, {
     techLabel: "text-xs text-slate-500",
     link: "text-sky-600 hover:text-sky-800",
     chevron: "text-slate-400",
+    logoBg: "bg-white/70 border-white/60",
   },
   terminal: {
     card: "bg-gray-900/80 border border-green-500/40 hover:border-green-400",
@@ -54,6 +57,7 @@ const variantStyles: Record<Variant, {
     techLabel: "text-xs text-green-400/80",
     link: "text-green-400 hover:text-green-300",
     chevron: "text-green-500/60",
+    logoBg: "bg-gray-800/80 border-green-500/30",
   },
   corporate: {
     card: "bg-white/80 backdrop-blur-md rounded-2xl border border-slate-100 shadow-sm hover:shadow-md",
@@ -66,6 +70,7 @@ const variantStyles: Record<Variant, {
     techLabel: "text-xs text-slate-500",
     link: "text-slate-700 hover:text-slate-900",
     chevron: "text-slate-400",
+    logoBg: "bg-slate-50 border-slate-200",
   },
 };
 
@@ -99,6 +104,7 @@ function TechLogo({ name, logo }: { name: string; logo: string }) {
 export function ExperiencePreviewCard({
   slug,
   company,
+  logo,
   role,
   duration,
   detail,
@@ -122,10 +128,22 @@ export function ExperiencePreviewCard({
     >
       {/* Header row */}
       <div className="flex items-start justify-between gap-2">
-        <div className="flex-1 flex flex-col gap-1">
-          <span className={styles.duration}>{duration}</span>
-          <h4 className={styles.company}>{company}</h4>
-          <p className={styles.role}>{role}</p>
+        <div className="flex items-start gap-3 flex-1">
+          {logo && (
+            <div className={`w-10 h-10 rounded-xl border flex-shrink-0 flex items-center justify-center overflow-hidden ${styles.logoBg}`}>
+              <img
+                src={logo}
+                alt={`${company} logo`}
+                className="w-7 h-7 object-contain"
+                onError={(e) => { e.currentTarget.style.display = 'none'; }}
+              />
+            </div>
+          )}
+          <div className="flex-1 flex flex-col gap-1">
+            <span className={styles.duration}>{duration}</span>
+            <h4 className={styles.company}>{company}</h4>
+            <p className={styles.role}>{role}</p>
+          </div>
         </div>
         <motion.div
           animate={{ rotate: expanded ? 180 : 0 }}

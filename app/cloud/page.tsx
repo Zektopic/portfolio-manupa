@@ -103,6 +103,7 @@ export default function CloudExperience() {
                   key={exp.slug}
                   slug={exp.slug}
                   company={exp.company}
+                  logo={exp.logo}
                   role={exp.position || ("positions" in exp ? exp.positions![0].title : "")}
                   duration={exp.duration}
                   detail={exp.location || ""}
