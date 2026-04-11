@@ -11,6 +11,7 @@ import {
   Github,
   BrainCircuit,
   Music,
+  Camera,
   Sparkles,
 } from "lucide-react";
 
@@ -58,6 +59,17 @@ const hobbies = [
       "Running Qwen and Gemma models locally on my AMD Ryzen 8600G. Exploring what's possible when AI runs on your own hardware.",
     color: "#e76f51",
   },
+];
+
+const collagePhotos = [
+  { src: "/images/about-me/collage-1.svg", alt: "Travel and hiking adventures" },
+  { src: "/images/about-me/collage-2.svg", alt: "Stamp collection close-up" },
+  { src: "/images/about-me/collage-3.svg", alt: "Badminton and sports" },
+  { src: "/images/about-me/collage-4.svg", alt: "Home server setup" },
+  { src: "/images/about-me/collage-5.svg", alt: "Workstation and coding" },
+  { src: "/images/about-me/collage-6.svg", alt: "Friends and team" },
+  { src: "/images/about-me/collage-7.svg", alt: "Nature and landscape" },
+  { src: "/images/about-me/collage-8.svg", alt: "Life moment" },
 ];
 
 const containerVariants = {
@@ -196,11 +208,45 @@ export default function AboutMe() {
             ))}
           </motion.div>
 
+          {/* Photo Collage */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.7, duration: 0.8 }}
+            className="mb-16"
+          >
+            <div className="flex items-center gap-3 mb-6">
+              <div className="w-10 h-10 rounded-xl bg-amber-100 flex items-center justify-center">
+                <Camera className="w-5 h-5 text-amber-600" />
+              </div>
+              <h2 className="text-2xl font-semibold text-slate-800">
+                Life in Frames
+              </h2>
+            </div>
+            <div className="columns-2 md:columns-3 gap-4">
+              {collagePhotos.map((photo, i) => (
+                <motion.div
+                  key={i}
+                  initial={{ opacity: 0, scale: 0.95 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  transition={{ delay: 0.8 + i * 0.1, duration: 0.5, ease: "easeOut" as const }}
+                  className="break-inside-avoid mb-4"
+                >
+                  <img
+                    src={photo.src}
+                    alt={photo.alt}
+                    className="w-full rounded-2xl border border-white/50 shadow-sm hover:shadow-lg transition-all duration-300 hover:scale-[1.02]"
+                  />
+                </motion.div>
+              ))}
+            </div>
+          </motion.div>
+
           {/* Music Section */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.8, duration: 0.8 }}
+            transition={{ delay: 1.6, duration: 0.8 }}
             className="mb-12"
           >
             <div className="flex items-center gap-3 mb-4">
@@ -231,7 +277,7 @@ export default function AboutMe() {
           <motion.p
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ delay: 1, duration: 0.8 }}
+            transition={{ delay: 1.8, duration: 0.8 }}
             className="text-center text-sm text-slate-400 font-light"
           >
             Thanks for being curious enough to click my name. That says something about you.
