@@ -1,4 +1,11 @@
-export const projectsData = [
+export const projectsData: {
+  title: string;
+  duration?: string;
+  associatedWith?: string;
+  description: string;
+  skills: string[];
+  images?: string[];
+}[] = [
   {
     title: "Solar + SuperCap IOT sensors",
     duration: "May 2025 - Present",
