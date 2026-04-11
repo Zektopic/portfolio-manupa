@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { ArrowLeft, ExternalLink, ImageOff } from "lucide-react";
 import Link from "next/link";
 import { projectsData } from "../data/projects";
+import LavaLampBackground from "@/components/LavaLampBackground";
 
 // Deterministic placeholder colors based on project title
 const placeholderColors = [
@@ -37,8 +38,9 @@ function getProjectLabel(skills: string[]): string {
 
 export default function ProjectsShowcase() {
   return (
-    <main className="relative min-h-screen w-full bg-gradient-to-br from-slate-50 via-sky-50/50 to-indigo-50/50">
-      <div className="max-w-7xl mx-auto px-6 md:px-12 py-12">
+    <main className="relative min-h-screen w-full">
+      <LavaLampBackground />
+      <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-12 py-12">
 
         {/* Navigation */}
         <motion.div
