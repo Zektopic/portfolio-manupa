@@ -4,7 +4,7 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import { ThemeProvider, createTheme } from "@mui/material/styles";
 import { IconButton, Popover, Box } from "@mui/material";
-import { Palette, Cloud, Cpu, Briefcase, Linkedin, Mail, FileText, Link as LinkIcon } from "lucide-react";
+import { Palette, Cloud, Cpu, Briefcase, Linkedin, Github, FileText, Link as LinkIcon } from "lucide-react";
 import Link from "next/link";
 
 // Predefined color presets for the liquid glass UI
@@ -131,9 +131,7 @@ export default function LiquidGlassHero() {
               transition={{ delay: 0.1, duration: 0.8, type: "spring", stiffness: 100 }}
               className="relative w-32 h-32 md:w-40 md:h-40 rounded-full border-4 border-white/60 shadow-xl overflow-hidden mb-2 bg-slate-200/50 backdrop-blur-sm flex items-center justify-center group"
             >
-              {/* Optional: Add an actual image tag here when ready */}
-              {/* <img src="/profile-image.jpg" alt="Profile" className="w-full h-full object-cover" /> */}
-              <span className="text-slate-500 font-medium text-lg uppercase tracking-widest group-hover:scale-110 transition-transform duration-500">Photo</span>
+              <img src="/profile-pic.jpg" alt="Manupa Wickramasinghe" className="w-full h-full object-cover" />
               
               {/* Subtle inner glowing ring based on active theme */}
               <div 
@@ -176,10 +174,10 @@ export default function LiquidGlassHero() {
                transition={{ delay: 0.6, duration: 0.8 }}
                className="flex items-center justify-center gap-4 mt-6"
             >
-              <SocialButton href="https://linkedin.com" icon={<Linkedin className="w-5 h-5" />} color={activeColor.primary} ariaLabel="LinkedIn" />
-              <SocialButton href="mailto:email@example.com" icon={<Mail className="w-5 h-5" />} color={activeColor.primary} ariaLabel="Email" />
-              <SocialButton href="https://blog.example.com" icon={<FileText className="w-5 h-5" />} color={activeColor.primary} ariaLabel="Blog" />
-              <SocialButton href="https://linktr.ee" icon={<LinkIcon className="w-5 h-5" />} color={activeColor.primary} ariaLabel="Linktree" />
+              <SocialButton href="https://www.linkedin.com/in/manupa-wickramasinghe/" icon={<Linkedin className="w-5 h-5" />} color={activeColor.primary} ariaLabel="LinkedIn" />
+              <SocialButton href="https://github.com/manupawickramasinghe" icon={<Github className="w-5 h-5" />} color={activeColor.primary} ariaLabel="GitHub" />
+              <SocialButton href="https://zektopic.blogspot.com" icon={<FileText className="w-5 h-5" />} color={activeColor.primary} ariaLabel="Blog" />
+              <SocialButton href="https://github.com/Zektopic" icon={<LinkIcon className="w-5 h-5" />} color={activeColor.primary} ariaLabel="GitHub Org" />
             </motion.div>
           </div>
 

@@ -68,7 +68,7 @@ export default function CloudExperience() {
             transition={{ duration: 1.2, delay: 0.6 }}
             className="text-5xl md:text-7xl font-light tracking-tight text-slate-800 mb-6 text-center md:text-left"
           >
-            Cloud <span className="font-semibold bg-clip-text text-transparent bg-gradient-to-r from-sky-500 to-indigo-600">Architect</span>
+            Cloud <span className="font-semibold bg-clip-text text-transparent bg-gradient-to-r from-sky-500 to-indigo-600">Engineer</span>
           </motion.h1>
 
           <motion.p
