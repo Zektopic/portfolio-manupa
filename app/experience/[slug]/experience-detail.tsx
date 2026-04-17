@@ -6,6 +6,7 @@ import Link from "next/link";
 import { experienceData } from "../../data/experience";
 import { projectsData } from "../../data/projects";
 import { SitecoreCloudBackground } from "./sitecore-background";
+import { RenewaaCloudBackground } from "./renewaa-background";
 
 const placeholderColors = [
   "from-sky-400/30 to-indigo-400/30",
@@ -75,16 +76,19 @@ export function ExperienceDetail({ slug }: { slug: string }) {
     ? experience.positions!.flatMap((p: { businessDevelopment?: string[] }) => p.businessDevelopment || [])
     : [];
 
+  const hasCustomBackground = slug === "sitecore" || slug === "renewaa-energy";
+
   return (
     <main
       className={`min-h-screen ${
-        slug === "sitecore"
+        hasCustomBackground
           ? "bg-transparent relative"
           : "bg-gradient-to-br from-slate-50 via-sky-50/50 to-indigo-50/50"
       }`}
     >
       {slug === "sitecore" && <SitecoreCloudBackground />}
-      <div className={`max-w-4xl mx-auto px-6 md:px-12 py-12 ${slug === "sitecore" ? "relative z-10" : ""}`}>
+      {slug === "renewaa-energy" && <RenewaaCloudBackground />}
+      <div className={`max-w-4xl mx-auto px-6 md:px-12 py-12 ${hasCustomBackground ? "relative z-10" : ""}`}>
         <motion.div
           initial={{ opacity: 0, x: -20 }}
           animate={{ opacity: 1, x: 0 }}
