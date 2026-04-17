@@ -1,7 +1,7 @@
 export const educationData = [
   {
     institution: "University of Moratuwa",
-    logo: "/logos/moratuwa.png",
+    logo: "",
     degree: "Bachelor of Science in IT - BSc. IT (UG), Information Technology",
     duration: "Jun 2021 - Dec 2025",
     activities: [
@@ -16,7 +16,7 @@ export const educationData = [
   },
   {
     institution: "General Sir John Kotelawala Defence University",
-    logo: "/logos/kdu.png",
+    logo: "/logos/kdu.svg",
     degree: "Bachelor of Science In Engineering - Bsc. (Hons), Electronics and Telecommunications Engineering",
     duration: "2020 - 2024",
     activities: [
@@ -32,7 +32,7 @@ export const educationData = [
   },
   {
     institution: "Nalanda College Colombo",
-    logo: "/logos/nalanda.png",
+    logo: "",
     degree: "GCE Advanced Level — Physical Sciences",
     duration: "2019",
     activities: [
@@ -46,7 +46,7 @@ export const educationData = [
   },
   {
     institution: "Royal Institute Campus",
-    logo: "/logos/royal.png",
+    logo: "",
     degree: "GCE Ordinary Level",
     duration: "O/L",
     activities: ["Chess Society"],
