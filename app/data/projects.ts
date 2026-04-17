@@ -8,6 +8,78 @@ export const projectsData: {
   link?: string;
 }[] = [
   {
+    title: "K8s Network DaemonSet Scanner & Spidermap",
+    duration: "2025 - Present",
+    associatedWith: "Sitecore",
+    description: "Designed a DaemonSet to continuously scan the network quality of every service and pod across a Kubernetes cluster. Generates a real-time spidermap for visualizing service topology and debugging connectivity, latency, and health of services from the internet.",
+    skills: ["Kubernetes", "DaemonSet", "Network Observability", "Azure AKS", "Go", "Prometheus"],
+    images: ["/images/projects/k8s-network-daemonset-scanner.svg"]
+  },
+  {
+    title: "K8s Network Optimization DaemonSet",
+    duration: "2025 - Present",
+    associatedWith: "Sitecore",
+    description: "Optimized a DaemonSet for network performance in large-scale production-grade Kubernetes clusters. Tuned kernel networking parameters, reduced inter-pod latency, and improved throughput across hundreds of nodes in Sitecore's production AKS environment.",
+    skills: ["Kubernetes", "DaemonSet", "Network Optimization", "Azure AKS", "Linux Kernel", "Performance Tuning"],
+    images: ["/images/projects/k8s-network-optimization-daemonset.svg"]
+  },
+  {
+    title: "AKS & Flux Upgrades — 65+ Production Clusters",
+    duration: "2025 - 2026",
+    associatedWith: "Sitecore",
+    description: "Orchestrated rolling upgrades of 65+ production Kubernetes clusters from AKS 1.31 → 1.33 with Flux 2.6.x in 2025, and from AKS 1.33 → 1.34 with Flux 2.7.x in 2026. Maintained zero-downtime delivery across Sitecore's global multi-cluster estate.",
+    skills: ["Azure AKS", "Flux CD", "Kubernetes", "GitOps", "Azure", "Cluster Management"],
+    images: ["/images/projects/aks-cluster-upgrades.svg"]
+  },
+  {
+    title: "K8s Cluster Provisioning — Sitecore Contenthub, XM Cloud & Shared Services",
+    duration: "2025 - Present",
+    associatedWith: "Sitecore",
+    description: "Provisioned and configured dedicated Kubernetes clusters on Azure AKS for Sitecore Contenthub, XM Cloud, and shared services platforms. Handled namespace design, RBAC, networking policies, ingress, and GitOps bootstrapping with Flux.",
+    skills: ["Azure AKS", "Kubernetes", "Flux CD", "Sitecore", "Helm", "GitOps", "RBAC"],
+    images: ["/images/projects/k8s-cluster-provisioning-sitecore.svg"]
+  },
+  {
+    title: "Azure Resource Provisioning for Clusters & Automations",
+    duration: "2025 - Present",
+    associatedWith: "Sitecore",
+    description: "Created and managed Azure resources supporting Kubernetes clusters and various automation workloads, including Virtual Networks, Managed Identities, Azure Automation Accounts, DNS zones, and monitoring infrastructure across multiple subscriptions.",
+    skills: ["Microsoft Azure", "Azure AKS", "Azure Networking", "Azure Automation", "Terraform", "IaC"],
+    images: ["/images/projects/azure-resource-provisioning.svg"]
+  },
+  {
+    title: "Quota Prediction AI Agent",
+    duration: "2025 - Present",
+    associatedWith: "Sitecore",
+    description: "Built a hybrid AI agent that combines mathematical time-series forecasting (statistical models, trend analysis) with LLM-based reasoning to predict Azure quota consumption. Provides proactive alerts and recommendations before quota limits are breached in production clusters.",
+    skills: ["Azure OpenAI", "Python", "LLM", "Agentic AI", "Time-Series", "Azure Quota API", "Mathematical Modelling"],
+    images: ["/images/projects/quota-prediction-ai-agent.svg"]
+  },
+  {
+    title: "JIRA Automation — Orphaned Azure Resource Detection",
+    duration: "2025 - Present",
+    associatedWith: "Sitecore",
+    description: "Developed an automation pipeline that scans Azure subscriptions for orphaned or unattached resources (unlinked disks, unused IPs, detached NICs, stale resource groups). Automatically creates structured JIRA tickets with resource metadata and cost impact for engineering teams to act on.",
+    skills: ["Python", "Azure Resource Graph", "JIRA API", "Azure Automation", "Cloud Cost Optimization", "Azure"],
+    images: ["/images/projects/jira-orphaned-azure-automation.svg"]
+  },
+  {
+    title: "Unified Prometheus Exporters Repository",
+    duration: "2025 - Present",
+    associatedWith: "Sitecore",
+    description: "Consolidated cloud platform-specific Prometheus exporters (AKS node metrics, Azure service metrics, Flux health, custom SLI exporters) into a single unified repository. Standardized exporter configuration, Helm chart deployment, and Grafana dashboard integration across all Sitecore clusters.",
+    skills: ["Prometheus", "Grafana", "Kubernetes", "Helm", "Azure Monitor", "Go", "Observability"],
+    images: ["/images/projects/unified-prometheus-exporters.svg"]
+  },
+  {
+    title: "IaC with Terraform — Azure Infrastructure & Migration",
+    duration: "2025 - Present",
+    associatedWith: "Sitecore",
+    description: "Adopted Infrastructure-as-Code using Terraform and Terraform Cloud (TFC) to provision and manage Azure resources including Subscriptions, Service Principals, Key Vaults, VNets, and RBAC. Led migration of manually created legacy resources into Terraform state with import workflows and drift detection.",
+    skills: ["Terraform", "Terraform Cloud", "Microsoft Azure", "HCL", "IaC", "Azure Key Vault", "RBAC", "GitOps"],
+    images: ["/images/projects/iac-terraform-azure.svg"]
+  },
+  {
     title: "Android CCTV App",
     duration: "Jan 2026 - Feb 2026",
     description: "Designed an Android application in Kotlin that transforms an Android device into an IP-based CCTV camera by exposing an RTSP stream. Supports background service execution, configurable video codec selection (H.264, H.265/HEVC, AV1, VP9), and an embedded web server for secure remote access.",
