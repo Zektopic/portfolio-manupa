@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="480" viewBox="0 0 800 480">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#001233"/>
+      <stop offset="100%" style="stop-color:#003087"/>
+    </linearGradient>
+  </defs>
+  <rect width="100%" height="100%" fill="url(#bg)"/>
+  <!-- Azure logo shape (simplified) -->
+  <g transform="translate(330,80)" opacity="0.15">
+    <polygon points="0,80 40,0 80,80 60,80 40,30 20,80" fill="#0078D4"/>
+    <polygon points="20,80 40,50 60,80" fill="#50b4ff"/>
+  </g>
+  <!-- Upgrade arrow timeline -->
+  <g>
+    <!-- Line -->
+    <line x1="120" y1="240" x2="680" y2="240" stroke="#0078D4" stroke-width="3" opacity="0.6"/>
+    <!-- Arrow -->
+    <polygon points="680,240 660,230 660,250" fill="#0078D4" opacity="0.8"/>
+    <!-- Version boxes -->
+    <rect x="100" y="210" width="120" height="56" rx="8" fill="#0052a3" stroke="#0078D4" stroke-width="1.5"/>
+    <text x="160" y="232" text-anchor="middle" fill="white" font-family="system-ui,sans-serif" font-size="11" font-weight="600">AKS 1.31</text>
+    <text x="160" y="252" text-anchor="middle" fill="#a0c4ff" font-family="system-ui,sans-serif" font-size="10">Flux 2.x</text>
+    <rect x="290" y="210" width="120" height="56" rx="8" fill="#005bb5" stroke="#0078D4" stroke-width="1.5"/>
+    <text x="350" y="232" text-anchor="middle" fill="white" font-family="system-ui,sans-serif" font-size="11" font-weight="600">AKS 1.33</text>
+    <text x="350" y="252" text-anchor="middle" fill="#a0c4ff" font-family="system-ui,sans-serif" font-size="10">Flux 2.6.x</text>
+    <rect x="480" y="210" width="120" height="56" rx="8" fill="#0078D4" stroke="#50b4ff" stroke-width="2"/>
+    <text x="540" y="232" text-anchor="middle" fill="white" font-family="system-ui,sans-serif" font-size="11" font-weight="600">AKS 1.34</text>
+    <text x="540" y="252" text-anchor="middle" fill="#d0eaff" font-family="system-ui,sans-serif" font-size="10">Flux 2.7.x</text>
+    <!-- Year labels -->
+    <text x="350" y="200" text-anchor="middle" fill="#6eb9ff" font-family="system-ui,sans-serif" font-size="10">2025</text>
+    <text x="540" y="200" text-anchor="middle" fill="#6eb9ff" font-family="system-ui,sans-serif" font-size="10">2026</text>
+  </g>
+  <!-- 65+ clusters badge -->
+  <rect x="320" y="310" width="160" height="36" rx="18" fill="#0078D4"/>
+  <text x="400" y="332" text-anchor="middle" dominant-baseline="middle" fill="white" font-family="system-ui,sans-serif" font-size="14" font-weight="700">65+ Clusters</text>
+  <!-- Azure badge -->
+  <rect x="20" y="16" width="130" height="28" rx="6" fill="#0078D4" opacity="0.9"/>
+  <text x="85" y="34" text-anchor="middle" dominant-baseline="middle" fill="white" font-family="system-ui,sans-serif" font-size="11" font-weight="700">☁ AZURE AKS</text>
+  <!-- Flux badge -->
+  <rect x="650" y="16" width="130" height="28" rx="6" fill="#2d76ae" opacity="0.9"/>
+  <text x="715" y="34" text-anchor="middle" dominant-baseline="middle" fill="white" font-family="system-ui,sans-serif" font-size="11" font-weight="700">◈ FLUX CD</text>
+  <!-- Title -->
+  <text x="400" y="430" text-anchor="middle" dominant-baseline="middle" fill="white" font-family="system-ui,sans-serif" font-size="17" font-weight="700">AKS Cluster Upgrades at Scale</text>
+  <text x="400" y="454" text-anchor="middle" dominant-baseline="middle" fill="#6eb9ff" font-family="system-ui,sans-serif" font-size="11">AKS 1.31 → 1.34 · Flux 2.6 → 2.7 · 65+ Production Clusters</text>
+</svg>

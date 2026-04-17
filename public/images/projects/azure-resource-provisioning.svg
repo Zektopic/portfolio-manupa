@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="480" viewBox="0 0 800 480">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#001848"/>
+      <stop offset="100%" style="stop-color:#0028a0"/>
+    </linearGradient>
+  </defs>
+  <rect width="100%" height="100%" fill="url(#bg)"/>
+  <!-- Azure logo (simplified geometric) -->
+  <g transform="translate(350,60)" opacity="0.25">
+    <polygon points="25,80 65,0 105,80 85,80 65,35 45,80" fill="#50b4ff"/>
+    <polygon points="45,80 65,50 85,80" fill="#0078D4"/>
+  </g>
+  <!-- Resource icons grid -->
+  <g>
+    <!-- Row 1 -->
+    <rect x="140" y="150" width="100" height="70" rx="8" fill="#0063b1" opacity="0.8" stroke="#50b4ff" stroke-width="1"/>
+    <text x="190" y="182" text-anchor="middle" dominant-baseline="middle" fill="white" font-family="system-ui,sans-serif" font-size="10" font-weight="600">Subscription</text>
+    <text x="190" y="198" text-anchor="middle" fill="#90c8ff" font-family="system-ui,sans-serif" font-size="9">Azure</text>
+    <rect x="260" y="150" width="100" height="70" rx="8" fill="#0052a3" opacity="0.8" stroke="#50b4ff" stroke-width="1"/>
+    <text x="310" y="182" text-anchor="middle" dominant-baseline="middle" fill="white" font-family="system-ui,sans-serif" font-size="10" font-weight="600">Key Vault</text>
+    <text x="310" y="198" text-anchor="middle" fill="#90c8ff" font-family="system-ui,sans-serif" font-size="9">Secrets</text>
+    <rect x="380" y="150" width="100" height="70" rx="8" fill="#0040a0" opacity="0.8" stroke="#50b4ff" stroke-width="1"/>
+    <text x="430" y="182" text-anchor="middle" dominant-baseline="middle" fill="white" font-family="system-ui,sans-serif" font-size="10" font-weight="600">Service</text>
+    <text x="430" y="198" text-anchor="middle" fill="#90c8ff" font-family="system-ui,sans-serif" font-size="9">Principal</text>
+    <rect x="500" y="150" width="100" height="70" rx="8" fill="#003080" opacity="0.8" stroke="#50b4ff" stroke-width="1"/>
+    <text x="550" y="182" text-anchor="middle" dominant-baseline="middle" fill="white" font-family="system-ui,sans-serif" font-size="10" font-weight="600">Resource</text>
+    <text x="550" y="198" text-anchor="middle" fill="#90c8ff" font-family="system-ui,sans-serif" font-size="9">Groups</text>
+    <!-- Row 2 -->
+    <rect x="200" y="250" width="100" height="70" rx="8" fill="#0078D4" opacity="0.8" stroke="#50b4ff" stroke-width="1"/>
+    <text x="250" y="282" text-anchor="middle" dominant-baseline="middle" fill="white" font-family="system-ui,sans-serif" font-size="10" font-weight="600">AKS</text>
+    <text x="250" y="298" text-anchor="middle" fill="#d0eaff" font-family="system-ui,sans-serif" font-size="9">Kubernetes</text>
+    <rect x="320" y="250" width="100" height="70" rx="8" fill="#005ab5" opacity="0.8" stroke="#50b4ff" stroke-width="1"/>
+    <text x="370" y="282" text-anchor="middle" dominant-baseline="middle" fill="white" font-family="system-ui,sans-serif" font-size="10" font-weight="600">VNet</text>
+    <text x="370" y="298" text-anchor="middle" fill="#d0eaff" font-family="system-ui,sans-serif" font-size="9">Networking</text>
+    <rect x="440" y="250" width="100" height="70" rx="8" fill="#0046a0" opacity="0.8" stroke="#50b4ff" stroke-width="1"/>
+    <text x="490" y="282" text-anchor="middle" dominant-baseline="middle" fill="white" font-family="system-ui,sans-serif" font-size="10" font-weight="600">Automation</text>
+    <text x="490" y="298" text-anchor="middle" fill="#d0eaff" font-family="system-ui,sans-serif" font-size="9">Accounts</text>
+  </g>
+  <!-- Azure badge -->
+  <rect x="20" y="16" width="130" height="28" rx="6" fill="#0078D4" opacity="0.9"/>
+  <text x="85" y="34" text-anchor="middle" dominant-baseline="middle" fill="white" font-family="system-ui,sans-serif" font-size="11" font-weight="700">☁ AZURE</text>
+  <!-- Title -->
+  <text x="400" y="430" text-anchor="middle" dominant-baseline="middle" fill="white" font-family="system-ui,sans-serif" font-size="17" font-weight="700">Azure Resource Provisioning</text>
+  <text x="400" y="454" text-anchor="middle" dominant-baseline="middle" fill="#6eb9ff" font-family="system-ui,sans-serif" font-size="11">Subscriptions · Key Vaults · Service Principals · Clusters · Automation</text>
+</svg>

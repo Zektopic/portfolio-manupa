@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="480" viewBox="0 0 800 480">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0a1628"/>
+      <stop offset="100%" style="stop-color:#0d2744"/>
+    </linearGradient>
+  </defs>
+  <rect width="100%" height="100%" fill="url(#bg)"/>
+  <!-- Cluster boxes -->
+  <g>
+    <!-- Contenthub cluster -->
+    <rect x="80" y="150" width="180" height="140" rx="12" fill="#326CE5" fill-opacity="0.15" stroke="#326CE5" stroke-width="1.5"/>
+    <text x="170" y="200" text-anchor="middle" fill="#60a5fa" font-family="system-ui,sans-serif" font-size="10" font-weight="600">⎈  K8S CLUSTER</text>
+    <text x="170" y="220" text-anchor="middle" fill="white" font-family="system-ui,sans-serif" font-size="13" font-weight="700">Contenthub</text>
+    <circle cx="140" cy="255" r="6" fill="#326CE5" opacity="0.7"/><circle cx="165" cy="255" r="6" fill="#326CE5" opacity="0.7"/><circle cx="190" cy="255" r="6" fill="#326CE5" opacity="0.7"/><circle cx="215" cy="255" r="6" fill="#326CE5" opacity="0.5"/>
+    <!-- XMCloud cluster -->
+    <rect x="310" y="150" width="180" height="140" rx="12" fill="#0078D4" fill-opacity="0.15" stroke="#0078D4" stroke-width="1.5"/>
+    <text x="400" y="200" text-anchor="middle" fill="#60a5fa" font-family="system-ui,sans-serif" font-size="10" font-weight="600">⎈  K8S CLUSTER</text>
+    <text x="400" y="220" text-anchor="middle" fill="white" font-family="system-ui,sans-serif" font-size="13" font-weight="700">XM Cloud</text>
+    <circle cx="370" cy="255" r="6" fill="#0078D4" opacity="0.7"/><circle cx="395" cy="255" r="6" fill="#0078D4" opacity="0.7"/><circle cx="420" cy="255" r="6" fill="#0078D4" opacity="0.7"/>
+    <!-- Shared Services cluster -->
+    <rect x="540" y="150" width="180" height="140" rx="12" fill="#7c3aed" fill-opacity="0.15" stroke="#7c3aed" stroke-width="1.5"/>
+    <text x="630" y="200" text-anchor="middle" fill="#c4b5fd" font-family="system-ui,sans-serif" font-size="10" font-weight="600">⎈  K8S CLUSTER</text>
+    <text x="630" y="220" text-anchor="middle" fill="white" font-family="system-ui,sans-serif" font-size="13" font-weight="700">Shared Services</text>
+    <circle cx="600" cy="255" r="6" fill="#7c3aed" opacity="0.7"/><circle cx="625" cy="255" r="6" fill="#7c3aed" opacity="0.7"/><circle cx="650" cy="255" r="6" fill="#7c3aed" opacity="0.7"/><circle cx="675" cy="255" r="6" fill="#7c3aed" opacity="0.5"/>
+  </g>
+  <!-- Azure badge -->
+  <rect x="20" y="16" width="130" height="28" rx="6" fill="#0078D4" opacity="0.9"/>
+  <text x="85" y="34" text-anchor="middle" dominant-baseline="middle" fill="white" font-family="system-ui,sans-serif" font-size="11" font-weight="700">☁ AZURE AKS</text>
+  <!-- Sitecore badge -->
+  <rect x="650" y="16" width="130" height="28" rx="6" fill="#eb1f1f" opacity="0.85"/>
+  <text x="715" y="34" text-anchor="middle" dominant-baseline="middle" fill="white" font-family="system-ui,sans-serif" font-size="11" font-weight="700">◆ SITECORE</text>
+  <!-- Title -->
+  <text x="400" y="430" text-anchor="middle" dominant-baseline="middle" fill="white" font-family="system-ui,sans-serif" font-size="17" font-weight="700">K8s Cluster Provisioning — Sitecore</text>
+  <text x="400" y="454" text-anchor="middle" dominant-baseline="middle" fill="#60a5fa" font-family="system-ui,sans-serif" font-size="11">Contenthub · XM Cloud · Shared Services</text>
+</svg>
