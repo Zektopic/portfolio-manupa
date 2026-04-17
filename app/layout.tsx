@@ -20,6 +20,7 @@ export const metadata: Metadata = {
 import { ThemeProvider } from "./components/theme-provider";
 import { SkipLink } from "./components/skip-link";
 import { ScrollToTop } from "./components/scroll-to-top";
+import { ThemeToggle } from "./components/theme-toggle";
 
 export default function RootLayout({
   children,
@@ -37,6 +38,9 @@ export default function RootLayout({
           defaultTheme="system"
           enableSystem
         >
+          <div className="fixed top-6 left-6 md:top-8 md:left-8 z-[100]">
+            <ThemeToggle />
+          </div>
           {children}
           <ScrollToTop />
         </ThemeProvider>

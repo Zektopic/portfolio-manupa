@@ -9,10 +9,10 @@ import Link from "next/link";
 
 // Predefined color presets for the liquid glass UI
 const colorPresets = [
-  { name: "Ocean", primary: "#0ea5e9", bg: "from-sky-50 via-sky-100 to-indigo-100", blob1: "bg-sky-300/40", blob2: "bg-indigo-300/40" },
-  { name: "Sunset", primary: "#f97316", bg: "from-orange-50 via-orange-100 to-rose-100", blob1: "bg-orange-300/40", blob2: "bg-rose-300/40" },
-  { name: "Forest", primary: "#10b981", bg: "from-emerald-50 via-emerald-100 to-teal-100", blob1: "bg-emerald-300/40", blob2: "bg-teal-300/40" },
-  { name: "Amethyst", primary: "#8b5cf6", bg: "from-purple-50 via-purple-100 to-fuchsia-100", blob1: "bg-purple-300/40", blob2: "bg-fuchsia-300/40" },
+  { name: "Ocean", primary: "#0ea5e9", bg: "from-sky-50 via-sky-100 to-indigo-100 dark:from-slate-900 dark:via-slate-800 dark:to-indigo-900", blob1: "bg-sky-300/40 dark:bg-sky-800/40", blob2: "bg-indigo-300/40 dark:bg-indigo-800/40" },
+  { name: "Sunset", primary: "#f97316", bg: "from-orange-50 via-orange-100 to-rose-100 dark:from-slate-900 dark:via-stone-800 dark:to-red-950", blob1: "bg-orange-300/40 dark:bg-orange-800/40", blob2: "bg-rose-300/40 dark:bg-rose-800/40" },
+  { name: "Forest", primary: "#10b981", bg: "from-emerald-50 via-emerald-100 to-teal-100 dark:from-slate-900 dark:via-slate-800 dark:to-teal-950", blob1: "bg-emerald-300/40 dark:bg-emerald-800/40", blob2: "bg-teal-300/40 dark:bg-teal-800/40" },
+  { name: "Amethyst", primary: "#8b5cf6", bg: "from-purple-50 via-purple-100 to-fuchsia-100 dark:from-slate-900 dark:via-slate-800 dark:to-fuchsia-950", blob1: "bg-purple-300/40 dark:bg-purple-800/40", blob2: "bg-fuchsia-300/40 dark:bg-fuchsia-800/40" },
 ];
 
 export default function LiquidGlassHero() {
@@ -144,14 +144,14 @@ export default function LiquidGlassHero() {
               initial={{ scale: 0.9, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
               transition={{ delay: 0.2, duration: 0.8 }}
-              className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-white/50 bg-white/40 backdrop-blur-md text-sm font-medium text-slate-600 shadow-sm"
+              className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-white/50 dark:border-white/10 bg-white/40 dark:bg-slate-900/40 backdrop-blur-md text-sm font-medium text-slate-600 dark:text-slate-300 shadow-sm"
             >
               <span className="w-2 h-2 rounded-full animate-pulse" style={{ backgroundColor: activeColor.primary }}></span>
               Available for new opportunities
             </motion.div>
 
             <motion.h1
-              className="text-4xl sm:text-5xl md:text-7xl font-light tracking-tight text-slate-800 break-words max-w-full text-center"
+              className="text-4xl sm:text-5xl md:text-7xl font-light tracking-tight text-slate-800 dark:text-slate-100 break-words max-w-full text-center"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.3, duration: 1 }}
@@ -161,7 +161,7 @@ export default function LiquidGlassHero() {
               </Link>
             </motion.h1>
             <motion.p
-              className="text-lg md:text-2xl text-slate-600 max-w-2xl mx-auto font-light leading-relaxed mb-8"
+              className="text-lg md:text-2xl text-slate-600 dark:text-slate-300 max-w-2xl mx-auto font-light leading-relaxed mb-8"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.5, duration: 1 }}
@@ -221,7 +221,7 @@ export default function LiquidGlassHero() {
               <motion.div
                 whileHover={{ y: -4, scale: 1.01 }}
                 whileTap={{ scale: 0.98 }}
-                className="flex items-center justify-center gap-3 p-5 rounded-2xl border border-white/50 bg-white/40 backdrop-blur-xl shadow-lg hover:shadow-2xl hover:bg-white/60 transition-all duration-300 relative overflow-hidden"
+                className="flex items-center justify-center gap-3 p-5 rounded-2xl border border-white/50 dark:border-white/10 bg-white/40 dark:bg-slate-800/40 backdrop-blur-xl shadow-lg hover:shadow-2xl hover:bg-white/60 dark:hover:bg-slate-800/60 transition-all duration-300 relative overflow-hidden"
               >
                 <div className="absolute inset-0 -translate-x-full group-hover:animate-[shimmer_2s_infinite] bg-gradient-to-r from-transparent via-white/70 to-transparent skew-x-12" />
                 <div
@@ -231,8 +231,8 @@ export default function LiquidGlassHero() {
                   <LayoutGrid className="w-5 h-5" />
                 </div>
                 <div className="text-left">
-                  <h2 className="text-lg font-semibold text-slate-800">Project Showcase</h2>
-                  <p className="text-sm text-slate-600 font-medium">Browse all 27 projects</p>
+                  <h2 className="text-lg font-semibold text-slate-800 dark:text-slate-100">Project Showcase</h2>
+                  <p className="text-sm text-slate-600 dark:text-slate-400 font-medium">Browse all 27 projects</p>
                 </div>
               </motion.div>
             </Link>
@@ -252,7 +252,7 @@ function NavButton({ href, icon, title, description, color, delay }: { href: str
         transition={{ duration: 0.8, delay, type: "spring", bounce: 0.5 }}
         whileHover={{ y: -8, scale: 1.02 }}
         whileTap={{ scale: 0.98 }}
-        className="h-full flex flex-col items-center text-center p-8 rounded-3xl border border-white/50 bg-white/40 backdrop-blur-xl shadow-lg hover:shadow-2xl hover:bg-white/60 transition-all duration-300 relative overflow-hidden"
+        className="h-full flex flex-col items-center text-center p-8 rounded-3xl border border-white/50 dark:border-white/10 bg-white/40 dark:bg-slate-800/40 backdrop-blur-xl shadow-lg hover:shadow-2xl hover:bg-white/60 dark:hover:bg-slate-800/60 transition-all duration-300 relative overflow-hidden"
       >
         {/* Hover glint effect */}
         <div className="absolute inset-0 -translate-x-full group-hover:animate-[shimmer_2s_infinite] bg-gradient-to-r from-transparent via-white/70 to-transparent skew-x-12" />
@@ -263,8 +263,8 @@ function NavButton({ href, icon, title, description, color, delay }: { href: str
         >
           {icon}
         </div>
-        <h2 className="text-2xl font-semibold text-slate-800 mb-3">{title}</h2>
-        <p className="text-slate-600 font-medium">{description}</p>
+        <h2 className="text-2xl font-semibold text-slate-800 dark:text-slate-100 mb-3">{title}</h2>
+        <p className="text-slate-600 dark:text-slate-400 font-medium">{description}</p>
       </motion.div>
     </Link>
   );
@@ -282,7 +282,7 @@ function SocialButton({ href, icon, color, ariaLabel }: { href: string; icon: Re
       <motion.div
         whileHover={{ y: -4, scale: 1.1 }}
         whileTap={{ scale: 0.9 }}
-        className="w-10 h-10 rounded-full bg-white/50 backdrop-blur-md border border-white/60 shadow-sm flex items-center justify-center text-slate-600 transition-colors duration-300 hover:bg-white/80"
+        className="w-10 h-10 rounded-full bg-white/50 dark:bg-slate-800/50 backdrop-blur-md border border-white/60 dark:border-white/10 shadow-sm flex items-center justify-center text-slate-600 dark:text-slate-300 transition-colors duration-300 hover:bg-white/80 dark:hover:bg-slate-700/80"
         style={{ '--hover-color': color } as React.CSSProperties}
       >
         <div className="transition-colors duration-300 group-hover:text-[var(--hover-color)]">
