@@ -49,10 +49,5 @@
     "@typescript-eslint/typescript-estree": {
       "minimatch": "^11.0.8"
     }
-  },
-  "pnpm": {
-    "overrides": {
-      "@typescript-eslint/typescript-estree>minimatch": "^11.0.8"
-    }
   }
 }
