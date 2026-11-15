@@ -34,17 +34,26 @@ function MovingRoad() {
   );
 }
 
+function createSeededRandom(seed: number) {
+  let state = seed >>> 0;
+  return () => {
+    state = (Math.imul(1664525, state) + 1013904223) >>> 0;
+    return state / 4294967296;
+  };
+}
+
 function SpeedLines() {
   const linesRef = useRef<THREE.Group>(null);
   
   const lines = useMemo(() => {
+    const rand = createSeededRandom(2025);
     return Array.from({ length: 50 }).map(() => ({
-      x: (Math.random() - 0.5) * 40,
-      y: (Math.random() - 0.5) * 10 - 1, // varied height
-      z: Math.random() * -60,
-      speed: 30 + Math.random() * 40,
-      color: Math.random() > 0.7 ? "#ff0055" : Math.random() > 0.5 ? "#00ffff" : "#ffffff", // Red, Cyan, White
-      length: 2 + Math.random() * 6
+      x: (rand() - 0.5) * 40,
+      y: (rand() - 0.5) * 10 - 1, // varied height
+      z: rand() * -60,
+      speed: 30 + rand() * 40,
+      color: rand() > 0.7 ? "#ff0055" : rand() > 0.5 ? "#00ffff" : "#ffffff", // Red, Cyan, White
+      length: 2 + rand() * 6
     }));
   }, []);
 
