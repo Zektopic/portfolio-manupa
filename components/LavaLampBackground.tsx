@@ -11,24 +11,33 @@ const MAX_RADIUS = 0.12;    // Max blob size (normalized 12%)
 const SPEED = 0.0015;       // Blob speed
 const STICKINESS = 1.35;    // High stickiness for merging effect
 
+function createSeededRandom(seed: number) {
+  let state = seed >>> 0;
+  return () => {
+    state = (Math.imul(1664525, state) + 1013904223) >>> 0;
+    return state / 4294967296;
+  };
+}
+
 function ShaderScene() {
   const { size } = useThree();
   const materialRef = useRef<THREE.ShaderMaterial>(null);
 
   const blobs = useMemo(() => {
+    const rand = createSeededRandom(99);
     return Array.from({ length: NUM_BLOBS }).map(() => {
       let vx, vy;
       do {
-        vx = (Math.random() - 0.5) * SPEED * 2;
-        vy = (Math.random() - 0.5) * SPEED * 2;
+        vx = (rand() - 0.5) * SPEED * 2;
+        vy = (rand() - 0.5) * SPEED * 2;
       } while (Math.abs(vx) < SPEED * 0.2 && Math.abs(vy) < SPEED * 0.2);
       
       return {
-        x: Math.random(),
-        y: Math.random(),
+        x: rand(),
+        y: rand(),
         vx,
         vy,
-        r: Math.random() * (MAX_RADIUS - MIN_RADIUS) + MIN_RADIUS
+        r: rand() * (MAX_RADIUS - MIN_RADIUS) + MIN_RADIUS
       };
     });
   }, []);

@@ -23,16 +23,25 @@ function Tree({ position }: { position: [number, number, number] }) {
   );
 }
 
+function createSeededRandom(seed: number) {
+  let state = seed >>> 0;
+  return () => {
+    state = (Math.imul(1664525, state) + 1013904223) >>> 0;
+    return state / 4294967296;
+  };
+}
+
 // Data packets traveling from trees to clouds (IoT to Cloud DevOps)
 function DataStream() {
   const packetsRef = useRef<THREE.Group>(null);
   
   const packets = useMemo(() => {
+    const rand = createSeededRandom(42);
     return Array.from({ length: 40 }).map(() => ({
-      x: (Math.random() - 0.5) * 30, // wide spread over the plantation
-      y: Math.random() * 12,
-      z: (Math.random() - 0.5) * 20 - 5,
-      speed: 2 + Math.random() * 4,
+      x: (rand() - 0.5) * 30, // wide spread over the plantation
+      y: rand() * 12,
+      z: (rand() - 0.5) * 20 - 5,
+      speed: 2 + rand() * 4,
     }));
   }, []);
 
@@ -86,11 +95,12 @@ function Scene() {
     }
   });
 
-  // Generate random tree positions
+  // Generate deterministic tree positions
   const trees = useMemo(() => {
+    const rand = createSeededRandom(1337);
     return Array.from({ length: 30 }).map(() => ({
-      x: (Math.random() - 0.5) * 25,
-      z: (Math.random() - 0.5) * 25 - 5,
+      x: (rand() - 0.5) * 25,
+      z: (rand() - 0.5) * 25 - 5,
     }));
   }, []);
 

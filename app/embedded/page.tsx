@@ -117,7 +117,7 @@ export default function EmbeddedExperience() {
           >
             <div className="text-green-400 text-xs tracking-widest uppercase mb-4 flex items-center gap-2">
               <span className="w-2 h-2 bg-green-400" />
-              // Professional Experience
+              {"// Professional Experience"}
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               {embeddedExperience.map((exp, i) => (
